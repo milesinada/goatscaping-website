@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ – Kauai Goatscaping | Goatscaping Questions Answered</title>
+  <meta name="description" content="Frequently asked questions about goatscaping on Kauai. What do goats eat? Are they safe around kids and dogs? How long does it take? All answered here.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { goat: { green:'#2D6A4F','green-light':'#40916C','green-pale':'#D8F3DC',brown:'#6B4226',beige:'#F5EFE6',orange:'#E07B39' } } } }
+    }
+  </script>
+  <style>
+    .font-display{font-family:'Playfair Display',Georgia,serif}
+    html{scroll-behavior:smooth}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}
+    .nav-link{position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:#E07B39;transition:width .3s}
+    .nav-link:hover::after{width:100%}
+    @keyframes pulse-ring{0%,100%{box-shadow:0 0 0 0 rgba(224,123,57,.45)}50%{box-shadow:0 0 0 14px rgba(224,123,57,0)}}
+    .pulse{animation:pulse-ring 2.4s infinite}
+    @keyframes floaty{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
+    .sticky-cta{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:999;animation:floaty 3s ease-in-out infinite}
+    ::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:#F5EFE6}::-webkit-scrollbar-thumb{background:#2D6A4F;border-radius:4px}
+
+    /* FAQ accordion */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), padding 0.3s ease;
+    }
+    .faq-answer.open {
+      max-height: 600px;
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-item {
+      transition: box-shadow 0.2s ease;
+    }
+    .faq-item.open {
+      box-shadow: 0 4px 20px rgba(45,106,79,0.1);
+    }
+  </style>
+</head>
+<body style="font-family:'Inter',sans-serif;" class="bg-goat-beige text-gray-800">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 group">
+      <span class="text-2xl group-hover:scale-110 transition-transform inline-block">🐐</span>
+      <div>
+        <div class="font-display font-bold text-goat-green leading-tight text-lg">Kauai Goatscaping</div>
+        <div class="text-xs text-goat-brown tracking-wide">Weed Eaters</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+      <a href="index.html" class="nav-link text-gray-700 hover:text-goat-green">Home</a>
+      <a href="services.html" class="nav-link text-gray-700 hover:text-goat-green">Services</a>
+      <a href="pricing.html" class="nav-link text-gray-700 hover:text-goat-green">Pricing</a>
+      <a href="gallery.html" class="nav-link text-gray-700 hover:text-goat-green">Gallery</a>
+      <a href="faq.html" class="nav-link text-goat-green font-semibold">FAQ</a>
+      <a href="contact.html" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
+    </div>
+    <button id="nav-toggle" class="md:hidden p-2 text-goat-green rounded-lg" aria-label="Menu">
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+    <div class="flex flex-col px-4 py-4 gap-1">
+      <a href="index.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Home</a>
+      <a href="services.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Services</a>
+      <a href="pricing.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Pricing</a>
+      <a href="gallery.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Gallery</a>
+      <a href="faq.html" class="py-2 px-3 rounded-lg bg-goat-green-pale text-goat-green font-medium">FAQ</a>
+      <a href="contact.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Contact</a>
+      <a href="tel:+18083469737" class="mt-2 bg-goat-green text-white py-3 rounded-full text-center font-bold">📞 Call Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="pt-28 pb-16 bg-goat-green text-white text-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image:url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23fff\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/svg%3E');"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6">
+    <div class="text-5xl mb-4">❓</div>
+    <h1 class="font-display text-4xl md:text-6xl font-bold mb-4">Frequently Asked Questions</h1>
+    <p class="text-green-200 text-xl max-w-xl mx-auto">Everything you wanted to know about goatscaping on Kauai</p>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 60" fill="none" class="w-full"><path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,25 1440,30 L1440,60 L0,60Z" fill="#F5EFE6"/></svg>
+  </div>
+</section>
+
+<!-- FAQ SECTIONS -->
+<section class="py-20 bg-goat-beige">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Category: The Goats -->
+    <div class="mb-12 reveal">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-goat-green rounded-xl flex items-center justify-center text-white text-xl">🐐</div>
+        <h2 class="font-display text-2xl font-bold text-goat-green">About the Goats</h2>
+      </div>
+      <div class="space-y-3">
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>What do the goats eat?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              Goats love weeds, grass, brush, vines, brambles, and most invasive plants. They especially enjoy Guinea grass, blackberry, lantana, young guava, and many common Kauai invasives. They eat leaves, stems, and bark — often targeting the plants you most want gone.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>What won't the goats eat?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              Goats generally avoid plants that are toxic to them — they have good instincts. They also typically won't eat mature tree trunks, most ornamental plants, or plants you want to keep. We always do a walkthrough first to identify what you want protected so we can fence those areas off.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>How many goats come to my property?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              It depends on the job size. Small residential jobs typically use a small herd of 4–8 goats. Larger properties may call for 12–20 or more. We scale the herd to match the work.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Category: Safety -->
+    <div class="mb-12 reveal">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-goat-orange rounded-xl flex items-center justify-center text-white text-xl">🔒</div>
+        <h2 class="font-display text-2xl font-bold text-goat-green">Safety & Your Family</h2>
+      </div>
+      <div class="space-y-3">
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>Are the goats safe around kids?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              Yes! Our goats are friendly and accustomed to people. Kids absolutely love them. We do ask that children are supervised around the goats, and that they don't feed them without asking us first — some human foods aren't good for goats.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>What about my dogs?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              We ask that dogs are kept away from the grazing area during work. Most dogs are curious and excitable around goats, which can stress the herd and disrupt their grazing. We'll set up a clear boundary and ask that dogs stay on the other side while the goats are working.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>How do you keep the goats from escaping?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              We use portable electric netting fencing to create a managed grazing zone. The goats stay within this area and we move it as sections are cleared. We've never had an escapee — these animals know their routine.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>Do you need to be present while the goats are working?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              Not necessarily. We're on-site to manage the herd, but you don't need to babysit us. We check in with you at the start and end of each day. Many clients just go about their normal routine.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Category: The Process -->
+    <div class="mb-12 reveal">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-goat-brown rounded-xl flex items-center justify-center text-white text-xl">📋</div>
+        <h2 class="font-display text-2xl font-bold text-goat-green">The Process</h2>
+      </div>
+      <div class="space-y-3">
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>How long does it take?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              Small jobs (1–2 plots) typically take 2–3 days. Medium properties take a week or more. Large acreage is multi-week. We give you a time estimate after we see the property — terrain density and overgrowth levels affect this significantly.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>Do you use any chemicals?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              Never. Zero chemicals, herbicides, or pesticides — ever. That's kind of the whole point. 🌿 Your land stays clean, your water table stays safe, and your family can walk the cleared area right away.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>What happens if it rains?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              We're on Kauai — rain happens! Light to moderate rain doesn't stop the goats. They'll keep grazing. Heavy, sustained rain may pause operations for safety, and we'll reschedule those days at no extra cost to you.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>Will the weeds come back?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              Yes, eventually — this is Kauai! But goats eat plants down to the root, which slows regrowth significantly compared to mowing. Our maintenance grazing plans keep things in check year-round so it never gets bad again.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>What's left behind after the goats leave?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              Cleared land and a little natural fertilizer! Goat droppings break down quickly and actually enrich your soil with nitrogen. Any large woody debris that the goats can't eat may remain, but we can arrange cleanup for an additional fee if needed.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Category: Booking & Pricing -->
+    <div class="mb-12 reveal">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-goat-green rounded-xl flex items-center justify-center text-white text-xl">💰</div>
+        <h2 class="font-display text-2xl font-bold text-goat-green">Booking & Pricing</h2>
+      </div>
+      <div class="space-y-3">
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>How do I get a quote?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              The fastest way is to text or call us with a photo of your property. You can also fill out the quote form on our <a href="contact.html" class="text-goat-green underline font-medium">Contact page</a>. We respond fast and the estimate is always free.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>How far in advance do I need to book?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              A week or two ahead is ideal, but we can sometimes accommodate last-minute requests depending on availability. The sooner you reach out, the better your chances of getting your preferred dates.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl overflow-hidden">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4 p-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+            <span>Is the deposit refundable if I cancel?</span>
+            <span class="faq-icon text-goat-green text-2xl font-light leading-none">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <div class="pb-5 text-gray-600 leading-relaxed">
+              Cancellations made more than 48 hours before the scheduled start are fully refundable. Late cancellations (under 48 hours) may forfeit the deposit as we've already scheduled the herd and turned down other work. See our <a href="terms.html" class="text-goat-green underline font-medium">Terms</a> for full details.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Still have questions -->
+    <div class="bg-goat-green rounded-3xl p-10 text-white text-center reveal">
+      <div class="text-5xl mb-4">🐐</div>
+      <h3 class="font-display text-2xl font-bold mb-3">Still Have Questions?</h3>
+      <p class="text-green-200 mb-6">We love hearing from people. Text us, call us, or send a note — we'll get back to you quickly.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+18083469737" class="pulse bg-goat-orange hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-full transition-all hover:scale-105">📞 Call Us</a>
+        <a href="sms:+18083469737" class="border-2 border-white text-white hover:bg-white hover:text-goat-green font-bold px-7 py-3 rounded-full transition-all hover:scale-105">💬 Text Us</a>
+        <a href="contact.html" class="border-2 border-white/50 text-white/80 hover:border-white hover:text-white font-bold px-7 py-3 rounded-full transition-all hover:scale-105">Send a Message</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-14">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-10 mb-10">
+      <div><div class="flex items-center gap-2 mb-4"><span class="text-2xl">🐐</span><div><div class="font-display font-bold text-lg">Kauai Goatscaping</div><div class="text-xs text-gray-400">Weed Eaters</div></div></div><p class="text-gray-400 text-sm leading-relaxed">Natural, no-chemical land clearing for Kauai properties.</p></div>
+      <div><h4 class="font-semibold mb-4 text-goat-orange">Quick Links</h4><div class="flex flex-col gap-2 text-sm text-gray-400"><a href="services.html" class="hover:text-white">Services</a><a href="pricing.html" class="hover:text-white">Pricing</a><a href="gallery.html" class="hover:text-white">Gallery</a><a href="faq.html" class="hover:text-white">FAQ</a><a href="contact.html" class="hover:text-white">Get Quote</a><a href="terms.html" class="hover:text-white">Terms</a></div></div>
+      <div><h4 class="font-semibold mb-4 text-goat-orange">Contact</h4><div class="flex flex-col gap-3 text-sm text-gray-400"><a href="tel:+18083469737" class="hover:text-white">📞 (808) 346-9737</a><a href="sms:+18083469737" class="hover:text-white">💬 Text for a fast reply</a><span>🌺 Based in Kalaheo · Serving island-wide</span></div></div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500"><div>© 2025 Kauai Goatscaping. All rights reserved.</div><a href="terms.html" class="hover:text-white">Terms of Service</a></div>
+  </div>
+</footer>
+
+<div class="md:hidden sticky-cta">
+  <a href="tel:+18083469737" class="bg-goat-orange text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-sm whitespace-nowrap">📞 Call Now — Free Quote</a>
+</div>
+
+<script>
+  // Nav toggle
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+    document.getElementById('icon-open').classList.toggle('hidden');
+    document.getElementById('icon-close').classList.toggle('hidden');
+  });
+
+  // Reveal
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 }).observe(el);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').classList.remove('open');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.classList.add('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>

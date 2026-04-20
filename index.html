@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kauai Goatscaping – Natural Land Clearing | Weed Eaters</title>
+  <meta name="description" content="Eco-friendly goatscaping and land clearing for Kauai properties. No chemicals, no machines. Hillside clearing, brush removal, and maintenance grazing on Kauai, Hawaii.">
+  <meta name="keywords" content="goatscaping Kauai, land clearing Kauai, brush removal Kauai, eco land clearing Hawaii">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            goat: {
+              green: '#2D6A4F',
+              'green-light': '#40916C',
+              'green-pale': '#D8F3DC',
+              brown: '#6B4226',
+              beige: '#F5EFE6',
+              orange: '#E07B39',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .font-display { font-family: 'Playfair Display', Georgia, serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Scroll reveal */
+    .reveal, .reveal-left, .reveal-right {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-left { transform: translateX(-28px); }
+    .reveal-right { transform: translateX(28px); }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* Card lift */
+    .card-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    /* Nav underline */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 2px;
+      background: #E07B39;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Before/after slider */
+    .ba-wrap { position: relative; overflow: hidden; cursor: col-resize; user-select: none; }
+    .ba-after { position: absolute; inset: 0; }
+    .ba-before {
+      position: absolute; top: 0; left: 0;
+      width: 50%; height: 100%; overflow: hidden;
+    }
+    .ba-before-inner {
+      position: absolute; inset: 0;
+      width: 200%;
+    }
+    .ba-handle {
+      position: absolute; top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px; height: 100%;
+      background: white;
+      z-index: 10;
+      cursor: col-resize;
+    }
+    .ba-knob {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px; height: 44px;
+      background: white; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: bold; color: #2D6A4F;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+    }
+
+    /* Pulse */
+    @keyframes pulse-ring {
+      0%,100% { box-shadow: 0 0 0 0 rgba(224,123,57,0.45); }
+      50% { box-shadow: 0 0 0 14px rgba(224,123,57,0); }
+    }
+    .pulse { animation: pulse-ring 2.4s infinite; }
+
+    /* Float sticky CTA */
+    @keyframes floaty {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-5px); }
+    }
+    .sticky-cta {
+      position: fixed; bottom: 18px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      animation: floaty 3s ease-in-out infinite;
+    }
+
+    /* Hero text shadow */
+    .hero-text { text-shadow: 0 2px 24px rgba(0,0,0,0.55); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-track { background: #F5EFE6; }
+    ::-webkit-scrollbar-thumb { background: #2D6A4F; border-radius: 4px; }
+
+    /* Goat bounce */
+    @keyframes goat-bounce {
+      0%,100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-12px) rotate(3deg); }
+    }
+    .goat-anim { animation: goat-bounce 2.5s ease-in-out infinite; display: inline-block; }
+
+    /* Hill wave */
+    .wave-svg { display: block; }
+  </style>
+</head>
+<body class="font-sans bg-goat-beige text-gray-800" style="font-family: 'Inter', sans-serif;">
+
+<!-- ========== NAV ========== -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 group">
+      <span class="text-2xl group-hover:scale-110 transition-transform inline-block">🐐</span>
+      <div>
+        <div class="font-display font-bold text-goat-green leading-tight text-lg">Kauai Goatscaping</div>
+        <div class="text-xs text-goat-brown tracking-wide">Weed Eaters</div>
+      </div>
+    </a>
+    <!-- Desktop -->
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+      <a href="index.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Home</a>
+      <a href="services.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Services</a>
+      <a href="pricing.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Pricing</a>
+      <a href="gallery.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Gallery</a>
+      <a href="faq.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">FAQ</a>
+      <a href="contact.html" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
+    </div>
+    <!-- Hamburger -->
+    <button id="nav-toggle" class="md:hidden p-2 text-goat-green rounded-lg hover:bg-goat-green-pale transition-colors" aria-label="Open menu">
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+    <div class="flex flex-col px-4 py-4 gap-1">
+      <a href="index.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale hover:text-goat-green font-medium transition-colors">Home</a>
+      <a href="services.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale hover:text-goat-green font-medium transition-colors">Services</a>
+      <a href="pricing.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale hover:text-goat-green font-medium transition-colors">Pricing</a>
+      <a href="gallery.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale hover:text-goat-green font-medium transition-colors">Gallery</a>
+      <a href="faq.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale hover:text-goat-green font-medium transition-colors">FAQ</a>
+      <a href="contact.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale hover:text-goat-green font-medium transition-colors">Contact</a>
+      <a href="tel:+18083469737" class="mt-2 bg-goat-green text-white py-3 rounded-full text-center font-bold">📞 Call Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  <!-- BG gradient — swap for a real hero photo via CSS background-image -->
+  <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-800 to-amber-900">
+    <!-- Noise/texture overlay -->
+    <div class="absolute inset-0 opacity-20" style="background-image:url('data:image/svg+xml,%3Csvg width=\'200\' height=\'200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'200\' height=\'200\' filter=\'url(%23n)\' opacity=\'0.4\'/%3E%3C/svg%3E');background-size:200px;"></div>
+  </div>
+
+  <!-- Animated hills -->
+  <div class="absolute bottom-0 left-0 right-0 pointer-events-none">
+    <svg class="wave-svg w-full" viewBox="0 0 1440 220" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,120 C240,30 480,200 720,100 C960,0 1200,180 1440,80 L1440,220 L0,220Z" fill="rgba(245,239,230,0.08)"/>
+      <path d="M0,160 C360,80 600,220 840,140 C1020,80 1260,200 1440,130 L1440,220 L0,220Z" fill="rgba(245,239,230,0.12)"/>
+      <path d="M0,190 C300,140 600,220 900,175 C1100,145 1300,210 1440,180 L1440,220 L0,220Z" fill="rgba(245,239,230,0.18)"/>
+    </svg>
+  </div>
+
+  <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+    <div class="goat-anim text-6xl md:text-8xl mb-6">🐐</div>
+    <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-5 leading-tight hero-text">
+      Let the Goats<br>Handle It
+    </h1>
+    <p class="text-xl sm:text-2xl mb-2 text-green-100 font-medium">
+      Eco-friendly land clearing for Kauai properties
+    </p>
+    <p class="text-base sm:text-lg text-green-200 mb-10">
+      No chemicals. No machines. Just happy goats doing what they love.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="tel:+18083469737"
+         class="pulse bg-goat-orange hover:bg-orange-600 text-white font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105 flex items-center gap-2 w-full sm:w-auto justify-center">
+        📞 Call Now
+      </a>
+      <a href="contact.html"
+         class="bg-white/15 hover:bg-white/25 backdrop-blur border-2 border-white/40 text-white font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105 flex items-center gap-2 w-full sm:w-auto justify-center">
+        Get Free Quote
+      </a>
+    </div>
+    <a href="#how-it-works" class="inline-flex flex-col items-center gap-2 mt-14 text-white/60 hover:text-white transition-colors group">
+      <span class="text-sm tracking-wide">How It Works</span>
+      <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section id="how-it-works" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="inline-block bg-goat-green-pale text-goat-green text-sm font-semibold px-4 py-1 rounded-full mb-3">Simple Process</span>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-goat-green mb-3">How It Works</h2>
+      <p class="text-gray-500 text-lg max-w-lg mx-auto">Three easy steps. Surprisingly satisfying to watch.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="text-center reveal delay-1">
+        <div class="relative inline-block mb-6">
+          <div class="w-20 h-20 bg-goat-green rounded-2xl flex items-center justify-center text-4xl card-lift mx-auto rotate-3 hover:rotate-0 transition-transform">🗺️</div>
+          <div class="absolute -top-2 -right-2 w-8 h-8 bg-goat-orange rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+        </div>
+        <h3 class="font-display text-xl font-bold text-gray-800 mb-3">We Assess Your Property</h3>
+        <p class="text-gray-500 leading-relaxed">We come out, walk your land, and give you a free estimate based on terrain, density, and size. No obligation.</p>
+      </div>
+      <div class="text-center reveal delay-2">
+        <div class="relative inline-block mb-6">
+          <div class="w-20 h-20 bg-goat-orange rounded-2xl flex items-center justify-center text-4xl card-lift mx-auto -rotate-2 hover:rotate-0 transition-transform">🐐</div>
+          <div class="absolute -top-2 -right-2 w-8 h-8 bg-goat-green rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+        </div>
+        <h3 class="font-display text-xl font-bold text-gray-800 mb-3">Goats Clear in Sections</h3>
+        <p class="text-gray-500 leading-relaxed">Our herd works through your property in managed, fenced sections—eating weeds, brush, and invasive plants down to the roots.</p>
+      </div>
+      <div class="text-center reveal delay-3">
+        <div class="relative inline-block mb-6">
+          <div class="w-20 h-20 bg-goat-brown rounded-2xl flex items-center justify-center text-4xl card-lift mx-auto rotate-2 hover:rotate-0 transition-transform">✅</div>
+          <div class="absolute -top-2 -right-2 w-8 h-8 bg-goat-orange rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+        </div>
+        <h3 class="font-display text-xl font-bold text-gray-800 mb-3">We Return Until Done</h3>
+        <p class="text-gray-500 leading-relaxed">We come back until the job is complete. Ongoing maintenance plans available so your land stays clear year-round.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY GOATS ========== -->
+<section class="py-24 bg-goat-beige">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="inline-block bg-goat-green text-white text-sm font-semibold px-4 py-1 rounded-full mb-3">The Goat Advantage</span>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-goat-green mb-3">Why Goats?</h2>
+      <p class="text-gray-500 text-lg max-w-lg mx-auto">The smarter, greener, and way more fun way to clear land</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+      <div class="bg-white rounded-2xl p-6 card-lift reveal delay-1">
+        <div class="text-4xl mb-3">🌿</div>
+        <h3 class="font-semibold text-gray-800 mb-1">No Chemicals</h3>
+        <p class="text-sm text-gray-500">Zero herbicides or pesticides. Safe for your land, family, pets, and watershed.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 card-lift reveal delay-2">
+        <div class="text-4xl mb-3">🔇</div>
+        <h3 class="font-semibold text-gray-800 mb-1">No Loud Machines</h3>
+        <p class="text-sm text-gray-500">Quiet, peaceful clearing. Your neighbors might even come watch.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 card-lift reveal delay-3">
+        <div class="text-4xl mb-3">⛰️</div>
+        <h3 class="font-semibold text-gray-800 mb-1">Steep Terrain</h3>
+        <p class="text-sm text-gray-500">Goats go where machines can't. No erosion, no slope risk, no problem.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 card-lift reveal delay-1">
+        <div class="text-4xl mb-3">🌱</div>
+        <h3 class="font-semibold text-gray-800 mb-1">Soil-Friendly</h3>
+        <p class="text-sm text-gray-500">Natural fertilization as they graze. Goats actually improve your soil health.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 card-lift reveal delay-2">
+        <div class="text-4xl mb-3">💰</div>
+        <h3 class="font-semibold text-gray-800 mb-1">Cost-Effective</h3>
+        <p class="text-sm text-gray-500">More affordable than repeated labor crews or heavy machinery. Long-term savings.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 card-lift reveal delay-3">
+        <div class="text-4xl mb-3">😄</div>
+        <h3 class="font-semibold text-gray-800 mb-1">Fun to Watch</h3>
+        <p class="text-sm text-gray-500">It works AND it's entertaining. Your kids will absolutely love it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BEFORE / AFTER ========== -->
+<section class="py-24 bg-goat-green">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-10 reveal">
+      <span class="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1 rounded-full mb-3">Results Speak</span>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-3">See the Difference</h2>
+      <p class="text-green-200 text-lg">Drag the slider — just 3 days of grazing</p>
+    </div>
+    <div class="reveal">
+      <!-- Replace the gradient divs below with actual <img> tags once you have photos -->
+      <div id="ba-container" class="ba-wrap rounded-2xl shadow-2xl" style="height:420px;">
+        <!-- AFTER background -->
+        <div class="ba-after rounded-2xl bg-gradient-to-br from-green-700 to-emerald-900 flex items-center justify-center">
+          <div class="text-center text-white/40 pointer-events-none">
+            <p class="text-2xl font-bold mt-4">AFTER</p>
+            <p class="text-sm mt-1">Replace with after photo</p>
+          </div>
+        </div>
+        <!-- BEFORE top layer -->
+        <div id="ba-before" class="ba-before">
+          <div class="ba-before-inner rounded-l-2xl bg-gradient-to-br from-amber-800 to-green-950 flex items-center justify-center">
+            <div class="text-center text-white/40 pointer-events-none w-full">
+              <p class="text-2xl font-bold mt-4">BEFORE</p>
+              <p class="text-sm mt-1">Replace with before photo</p>
+            </div>
+          </div>
+        </div>
+        <!-- Handle -->
+        <div id="ba-handle" class="ba-handle">
+          <div class="ba-knob">⟺</div>
+        </div>
+        <!-- Labels -->
+        <div class="absolute top-4 left-4 z-20 bg-black/50 text-white text-xs font-bold px-3 py-1 rounded-full">BEFORE</div>
+        <div class="absolute top-4 right-4 z-20 bg-goat-orange text-white text-xs font-bold px-3 py-1 rounded-full">AFTER</div>
+      </div>
+    </div>
+    <p class="text-center text-green-300 text-sm mt-4">📸 Add your own before/after photos for maximum impact</p>
+  </div>
+</section>
+
+<!-- ========== QUICK PRICING ========== -->
+<section class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="reveal">
+      <span class="inline-block bg-goat-green-pale text-goat-green text-sm font-semibold px-4 py-1 rounded-full mb-3">Transparent Pricing</span>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-goat-green mb-3">Simple, Fair Prices</h2>
+      <p class="text-gray-500 text-lg mb-12">No surprises. No hidden fees. Just honest work.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-goat-beige rounded-2xl p-8 card-lift reveal delay-1 text-left border-2 border-transparent hover:border-goat-green transition-colors">
+        <div class="text-3xl mb-3">📐</div>
+        <div class="font-display text-4xl font-bold text-goat-green mb-1">$100</div>
+        <div class="text-gray-700 font-semibold mb-3">per 50 × 50 ft plot</div>
+        <p class="text-gray-500 text-sm">Standard pricing for most residential clearings. Multi-plot discounts available.</p>
+      </div>
+      <div class="bg-goat-beige rounded-2xl p-8 card-lift reveal delay-2 text-left border-2 border-transparent hover:border-goat-orange transition-colors">
+        <div class="text-3xl mb-3">🏡</div>
+        <div class="font-display text-4xl font-bold text-goat-orange mb-1">~$250</div>
+        <div class="text-gray-700 font-semibold mb-3">small jobs</div>
+        <p class="text-gray-500 text-sm">Small areas, 2 days, small herd. Perfect for a corner that got out of hand.</p>
+      </div>
+    </div>
+    <a href="pricing.html" class="inline-flex items-center gap-2 bg-goat-green hover:bg-green-800 text-white font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105 reveal">
+      See Full Pricing Details →
+    </a>
+  </div>
+</section>
+
+<!-- ========== TRUST ========== -->
+<section class="py-24 bg-goat-green text-white overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <span class="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1 rounded-full mb-3">Why Choose Us</span>
+      <h2 class="font-display text-3xl md:text-5xl font-bold mb-3">Trusted Local Service</h2>
+      <p class="text-green-200 text-lg">Kauai-based, community-focused, and committed to doing the job right</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="reveal delay-1">
+        <div class="text-6xl mb-5">🌺</div>
+        <h3 class="font-display text-xl font-bold mb-3">Local Kauai Service</h3>
+        <p class="text-green-200 leading-relaxed">We know this island — its terrain, its plants, its people. Born and raised on Kauai.</p>
+      </div>
+      <div class="reveal delay-2">
+        <div class="text-6xl mb-5">🔒</div>
+        <h3 class="font-display text-xl font-bold mb-3">Managed Grazing System</h3>
+        <p class="text-green-200 leading-relaxed">Controlled, fenced grazing areas. Your property and our animals are always safe.</p>
+      </div>
+      <div class="reveal delay-3">
+        <div class="text-6xl mb-5">⭐</div>
+        <h3 class="font-display text-xl font-bold mb-3">Safe & Professional</h3>
+        <p class="text-green-200 leading-relaxed">Clear communication, reliable scheduling, and real results every single time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="py-28 bg-goat-beige">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <div class="goat-anim text-6xl mb-6">🐐</div>
+    <h2 class="font-display text-3xl sm:text-5xl font-bold text-goat-green mb-5 leading-tight">
+      Get a Free Estimate Today
+    </h2>
+    <p class="text-gray-500 text-xl mb-10 max-w-xl mx-auto leading-relaxed">
+      Send a photo of your property and we'll get back to you fast. Local service. Fast response. Real results.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="contact.html" class="pulse bg-goat-orange hover:bg-orange-600 text-white font-bold px-10 py-4 rounded-full text-lg transition-all hover:scale-105">
+        Get Free Quote
+      </a>
+      <a href="tel:+18083469737" class="bg-goat-green hover:bg-green-800 text-white font-bold px-10 py-4 rounded-full text-lg transition-all hover:scale-105">
+        📞 Call Us Now
+      </a>
+      <a href="sms:+18083469737" class="border-2 border-goat-green text-goat-green hover:bg-goat-green hover:text-white font-bold px-10 py-4 rounded-full text-lg transition-all hover:scale-105">
+        💬 Text Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-gray-900 text-white py-14">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-10 mb-10">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-2xl">🐐</span>
+          <div>
+            <div class="font-display font-bold text-lg">Kauai Goatscaping</div>
+            <div class="text-xs text-gray-400 tracking-wide">Weed Eaters</div>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Natural, no-chemical land clearing for Kauai properties—powered by goats.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-goat-orange">Quick Links</h4>
+        <div class="flex flex-col gap-2 text-sm text-gray-400">
+          <a href="services.html" class="hover:text-white transition-colors">Services</a>
+          <a href="pricing.html" class="hover:text-white transition-colors">Pricing</a>
+          <a href="gallery.html" class="hover:text-white transition-colors">Gallery</a>
+          <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+          <a href="contact.html" class="hover:text-white transition-colors">Get Quote</a>
+          <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-goat-orange">Contact</h4>
+        <div class="flex flex-col gap-3 text-sm text-gray-400">
+          <a href="tel:+18083469737" class="hover:text-white transition-colors flex items-center gap-2">📞 (808) 346-9737</a>
+          <a href="sms:+18083469737" class="hover:text-white transition-colors flex items-center gap-2">💬 Text for a fast reply</a>
+          <span class="flex items-center gap-2">🌺 Based in Kalaheo · Serving island-wide</span>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
+      <div>© 2025 Kauai Goatscaping. All rights reserved.</div>
+      <div class="flex gap-4">
+        <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+        <span>·</span>
+        <span>Based in Kalaheo, serving all of Kauai island-wide</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== STICKY MOBILE CTA ========== -->
+<div class="md:hidden sticky-cta">
+  <a href="tel:+18083469737"
+     class="bg-goat-orange text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-sm whitespace-nowrap">
+    📞 Call Now — Free Quote
+  </a>
+</div>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  navToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // Before/after slider
+  const baCont = document.getElementById('ba-container');
+  const baBefore = document.getElementById('ba-before');
+  const baHandle = document.getElementById('ba-handle');
+  let baDrag = false;
+
+  function setBA(x) {
+    const r = baCont.getBoundingClientRect();
+    let pct = Math.max(4, Math.min(96, ((x - r.left) / r.width) * 100));
+    baBefore.style.width = pct + '%';
+    baHandle.style.left = pct + '%';
+  }
+
+  baCont.addEventListener('mousedown', e => { baDrag = true; setBA(e.clientX); });
+  document.addEventListener('mousemove', e => { if (baDrag) setBA(e.clientX); });
+  document.addEventListener('mouseup', () => baDrag = false);
+  baCont.addEventListener('touchstart', e => { baDrag = true; setBA(e.touches[0].clientX); }, { passive: true });
+  document.addEventListener('touchmove', e => { if (baDrag) setBA(e.touches[0].clientX); }, { passive: true });
+  document.addEventListener('touchend', () => baDrag = false);
+</script>
+</body>
+</html>

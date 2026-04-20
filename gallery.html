@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery – Kauai Goatscaping | Before & After Photos</title>
+  <meta name="description" content="See the results. Before and after photos of goatscaping projects across Kauai. Hillside clearing, overgrown land, and terrain variety.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { goat: { green:'#2D6A4F','green-light':'#40916C','green-pale':'#D8F3DC',brown:'#6B4226',beige:'#F5EFE6',orange:'#E07B39' } } } }
+    }
+  </script>
+  <style>
+    .font-display{font-family:'Playfair Display',Georgia,serif}
+    html{scroll-behavior:smooth}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}.delay-4{transition-delay:.32s}.delay-5{transition-delay:.40s}.delay-6{transition-delay:.48s}
+    .nav-link{position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:#E07B39;transition:width .3s}
+    .nav-link:hover::after{width:100%}
+    @keyframes pulse-ring{0%,100%{box-shadow:0 0 0 0 rgba(224,123,57,.45)}50%{box-shadow:0 0 0 14px rgba(224,123,57,0)}}
+    .pulse{animation:pulse-ring 2.4s infinite}
+    @keyframes floaty{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
+    .sticky-cta{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:999;animation:floaty 3s ease-in-out infinite}
+    ::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:#F5EFE6}::-webkit-scrollbar-thumb{background:#2D6A4F;border-radius:4px}
+
+    /* Gallery grid item */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+    .gallery-item img, .gallery-item .ph {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img, .gallery-item:hover .ph {
+      transform: scale(1.06);
+    }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+    #lightbox img { max-width: 90vw; max-height: 85vh; display: block; border-radius: 12px; }
+    #lightbox-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 44px; height: 44px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    #lightbox-close:hover { background: rgba(255,255,255,0.35); }
+    #lightbox-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+      padding: 20px 16px 14px;
+      font-size: 14px;
+      border-radius: 0 0 12px 12px;
+    }
+  </style>
+</head>
+<body style="font-family:'Inter',sans-serif;" class="bg-goat-beige text-gray-800">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 group">
+      <span class="text-2xl group-hover:scale-110 transition-transform inline-block">🐐</span>
+      <div>
+        <div class="font-display font-bold text-goat-green leading-tight text-lg">Kauai Goatscaping</div>
+        <div class="text-xs text-goat-brown tracking-wide">Weed Eaters</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+      <a href="index.html" class="nav-link text-gray-700 hover:text-goat-green">Home</a>
+      <a href="services.html" class="nav-link text-gray-700 hover:text-goat-green">Services</a>
+      <a href="pricing.html" class="nav-link text-gray-700 hover:text-goat-green">Pricing</a>
+      <a href="gallery.html" class="nav-link text-goat-green font-semibold">Gallery</a>
+      <a href="faq.html" class="nav-link text-gray-700 hover:text-goat-green">FAQ</a>
+      <a href="contact.html" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
+    </div>
+    <button id="nav-toggle" class="md:hidden p-2 text-goat-green rounded-lg" aria-label="Menu">
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+    <div class="flex flex-col px-4 py-4 gap-1">
+      <a href="index.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Home</a>
+      <a href="services.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Services</a>
+      <a href="pricing.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Pricing</a>
+      <a href="gallery.html" class="py-2 px-3 rounded-lg bg-goat-green-pale text-goat-green font-medium">Gallery</a>
+      <a href="faq.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">FAQ</a>
+      <a href="contact.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Contact</a>
+      <a href="tel:+18083469737" class="mt-2 bg-goat-green text-white py-3 rounded-full text-center font-bold">📞 Call Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="pt-28 pb-16 bg-goat-green text-white text-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image:url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23fff\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/svg%3E');"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6">
+    <div class="text-5xl mb-4">📸</div>
+    <h1 class="font-display text-4xl md:text-6xl font-bold mb-4">Gallery</h1>
+    <p class="text-green-200 text-xl max-w-xl mx-auto">Before & after. Goats at work. Real Kauai terrain.</p>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 60" fill="none" class="w-full"><path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,25 1440,30 L1440,60 L0,60Z" fill="#F5EFE6"/></svg>
+  </div>
+</section>
+
+<!-- PHOTO ADD INSTRUCTIONS BANNER -->
+<div class="bg-amber-50 border-b border-amber-200">
+  <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center gap-3">
+    <span class="text-2xl">💡</span>
+    <p class="text-amber-800 text-sm text-center sm:text-left">
+      <strong>Add your photos:</strong> Replace each placeholder below with <code class="bg-amber-100 px-1 rounded">&lt;img src="your-photo.jpg" alt="description"&gt;</code> inside each <code class="bg-amber-100 px-1 rounded">.gallery-item</code> div. Use WebP format for best performance.
+    </p>
+  </div>
+</div>
+
+<!-- FILTER TABS -->
+<section class="py-8 bg-goat-beige">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-wrap gap-3 justify-center">
+      <button class="filter-btn active bg-goat-green text-white px-5 py-2 rounded-full text-sm font-semibold transition-all" data-filter="all">All Photos</button>
+      <button class="filter-btn bg-white text-gray-600 hover:bg-goat-green-pale px-5 py-2 rounded-full text-sm font-semibold transition-all" data-filter="before-after">Before & After</button>
+      <button class="filter-btn bg-white text-gray-600 hover:bg-goat-green-pale px-5 py-2 rounded-full text-sm font-semibold transition-all" data-filter="goats">Goats at Work</button>
+      <button class="filter-btn bg-white text-gray-600 hover:bg-goat-green-pale px-5 py-2 rounded-full text-sm font-semibold transition-all" data-filter="terrain">Terrain</button>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY GRID -->
+<section class="pb-24 bg-goat-beige">
+  <div class="max-w-6xl mx-auto px-6">
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+      <!-- Item 1 — BEFORE photo -->
+      <div class="gallery-item col-span-2 row-span-2 reveal delay-1" style="min-height:300px;" data-category="before-after" data-caption="Steep hillside — Before clearing">
+        <div class="ph w-full h-full bg-gradient-to-br from-amber-800 to-green-950 flex items-center justify-center min-h-[300px]">
+          <div class="text-center text-white/50 p-4"><div class="text-5xl mb-2">📷</div><p class="text-sm font-semibold">BEFORE Photo</p><p class="text-xs mt-1">Steep hillside clearing</p></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="text-white text-sm font-semibold">Steep Hillside — Before</span>
+        </div>
+        <div class="absolute top-3 left-3 bg-amber-700 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</div>
+      </div>
+
+      <!-- Item 2 — AFTER photo -->
+      <div class="gallery-item col-span-2 row-span-2 reveal delay-2" style="min-height:300px;" data-category="before-after" data-caption="Steep hillside — After 3 days of grazing">
+        <div class="ph w-full h-full bg-gradient-to-br from-green-700 to-emerald-900 flex items-center justify-center min-h-[300px]">
+          <div class="text-center text-white/50 p-4"><div class="text-5xl mb-2">📷</div><p class="text-sm font-semibold">AFTER Photo</p><p class="text-xs mt-1">After 3 days grazing</p></div>
+        </div>
+        <div class="gallery-overlay">
+          <span class="text-white text-sm font-semibold">Steep Hillside — After 3 Days</span>
+        </div>
+        <div class="absolute top-3 left-3 bg-goat-green text-white text-xs font-bold px-2 py-1 rounded-full">AFTER</div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="gallery-item reveal delay-1" style="min-height:200px;" data-category="goats" data-caption="The herd on the job">
+        <div class="ph w-full h-full bg-gradient-to-br from-green-600 to-teal-800 flex items-center justify-center min-h-[200px]">
+          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🐐</div><p class="text-xs">Goats at work</p></div>
+        </div>
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">The herd on the job</span></div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="gallery-item reveal delay-2" style="min-height:200px;" data-category="terrain" data-caption="Rocky Kauai terrain">
+        <div class="ph w-full h-full bg-gradient-to-br from-stone-600 to-stone-900 flex items-center justify-center min-h-[200px]">
+          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">⛰️</div><p class="text-xs">Rocky terrain</p></div>
+        </div>
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Rocky Kauai Terrain</span></div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="gallery-item reveal delay-3" style="min-height:200px;" data-category="goats" data-caption="Goat closeup — our best worker">
+        <div class="ph w-full h-full bg-gradient-to-br from-lime-700 to-green-900 flex items-center justify-center min-h-[200px]">
+          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🐐</div><p class="text-xs">Closeup</p></div>
+        </div>
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Our Best Worker</span></div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="gallery-item reveal delay-4" style="min-height:200px;" data-category="before-after" data-caption="Fence line — before">
+        <div class="ph w-full h-full bg-gradient-to-br from-amber-700 to-amber-900 flex items-center justify-center min-h-[200px]">
+          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">📷</div><p class="text-xs">Fence line before</p></div>
+        </div>
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Fence Line — Before</span></div>
+        <div class="absolute top-3 left-3 bg-amber-700 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="gallery-item col-span-2 reveal delay-1" style="min-height:220px;" data-category="before-after" data-caption="Fence line — after">
+        <div class="ph w-full h-full bg-gradient-to-br from-emerald-600 to-green-800 flex items-center justify-center min-h-[220px]">
+          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">📷</div><p class="text-xs">Fence line after</p></div>
+        </div>
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Fence Line — After</span></div>
+        <div class="absolute top-3 left-3 bg-goat-green text-white text-xs font-bold px-2 py-1 rounded-full">AFTER</div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="gallery-item reveal delay-2" style="min-height:200px;" data-category="terrain" data-caption="View from the hill after clearing">
+        <div class="ph w-full h-full bg-gradient-to-br from-sky-700 to-green-900 flex items-center justify-center min-h-[200px]">
+          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🌺</div><p class="text-xs">Kauai view</p></div>
+        </div>
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">View From the Hill</span></div>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="gallery-item reveal delay-3" style="min-height:200px;" data-category="goats" data-caption="Herd grazing in a managed section">
+        <div class="ph w-full h-full bg-gradient-to-br from-teal-700 to-green-950 flex items-center justify-center min-h-[200px]">
+          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🐐</div><p class="text-xs">Managed grazing</p></div>
+        </div>
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Managed Section Grazing</span></div>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="gallery-item reveal delay-4" style="min-height:200px;" data-category="terrain" data-caption="Overgrown before we arrived">
+        <div class="ph w-full h-full bg-gradient-to-br from-yellow-800 to-amber-950 flex items-center justify-center min-h-[200px]">
+          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🌿</div><p class="text-xs">Before arrival</p></div>
+        </div>
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Overgrown — Before We Arrived</span></div>
+        <div class="absolute top-3 left-3 bg-amber-700 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</div>
+      </div>
+
+      <!-- Item 11 -->
+      <div class="gallery-item col-span-2 reveal delay-5" style="min-height:220px;" data-category="goats" data-caption="Happy goats, happy customers">
+        <div class="ph w-full h-full bg-gradient-to-br from-green-600 to-lime-900 flex items-center justify-center min-h-[220px]">
+          <div class="text-center text-white/50 p-4"><div class="text-5xl mb-1">🐐🐐🐐</div><p class="text-xs">Happy herd</p></div>
+        </div>
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Happy Goats, Happy Customers</span></div>
+      </div>
+
+    </div>
+    <p class="text-center text-gray-400 text-sm mt-8">📸 Photos coming soon — check back as we document more jobs across Kauai</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-goat-green text-white text-center">
+  <div class="max-w-3xl mx-auto px-6 reveal">
+    <div class="text-5xl mb-5">📞</div>
+    <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Want Results Like These?</h2>
+    <p class="text-green-200 text-xl mb-8">Send us a photo of your property. We'll tell you exactly what the goats can do for it.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="contact.html" class="pulse bg-goat-orange hover:bg-orange-600 text-white font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105">Get Free Estimate</a>
+      <a href="tel:+18083469737" class="border-2 border-white text-white hover:bg-white hover:text-goat-green font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105">📞 Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-14">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-10 mb-10">
+      <div><div class="flex items-center gap-2 mb-4"><span class="text-2xl">🐐</span><div><div class="font-display font-bold text-lg">Kauai Goatscaping</div><div class="text-xs text-gray-400">Weed Eaters</div></div></div><p class="text-gray-400 text-sm leading-relaxed">Natural, no-chemical land clearing for Kauai properties.</p></div>
+      <div><h4 class="font-semibold mb-4 text-goat-orange">Quick Links</h4><div class="flex flex-col gap-2 text-sm text-gray-400"><a href="services.html" class="hover:text-white">Services</a><a href="pricing.html" class="hover:text-white">Pricing</a><a href="gallery.html" class="hover:text-white">Gallery</a><a href="faq.html" class="hover:text-white">FAQ</a><a href="contact.html" class="hover:text-white">Get Quote</a><a href="terms.html" class="hover:text-white">Terms</a></div></div>
+      <div><h4 class="font-semibold mb-4 text-goat-orange">Contact</h4><div class="flex flex-col gap-3 text-sm text-gray-400"><a href="tel:+18083469737" class="hover:text-white">📞 (808) 346-9737</a><a href="sms:+18083469737" class="hover:text-white">💬 Text for a fast reply</a><span>🌺 Based in Kalaheo · Serving island-wide</span></div></div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500"><div>© 2025 Kauai Goatscaping. All rights reserved.</div><a href="terms.html" class="hover:text-white">Terms of Service</a></div>
+  </div>
+</footer>
+
+<div class="md:hidden sticky-cta">
+  <a href="tel:+18083469737" class="bg-goat-orange text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-sm whitespace-nowrap">📞 Call Now — Free Quote</a>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <div id="lightbox-content">
+    <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-caption"></div>
+    <button id="lightbox-close">✕</button>
+  </div>
+</div>
+
+<script>
+  // Nav
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+    document.getElementById('icon-open').classList.toggle('hidden');
+    document.getElementById('icon-close').classList.toggle('hidden');
+  });
+
+  // Reveal
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 }).observe(el);
+  });
+
+  // Filter tabs
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active', 'bg-goat-green', 'text-white');
+        b.classList.add('bg-white', 'text-gray-600');
+      });
+      btn.classList.add('active', 'bg-goat-green', 'text-white');
+      btn.classList.remove('bg-white', 'text-gray-600');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
+      });
+    });
+  });
+
+  // Lightbox (opens on click — shows caption; if real img present, shows it)
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const caption = item.dataset.caption || '';
+      const img = item.querySelector('img');
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const lbCap = document.getElementById('lightbox-caption');
+      if (img) {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbImg.style.display = 'block';
+      } else {
+        lbImg.style.display = 'none';
+      }
+      lbCap.textContent = caption;
+      lb.classList.add('open');
+    });
+  });
+  document.getElementById('lightbox-close').addEventListener('click', () => {
+    document.getElementById('lightbox').classList.remove('open');
+  });
+  document.getElementById('lightbox').addEventListener('click', e => {
+    if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
+  });
+</script>
+</body>
+</html>
