@@ -121,7 +121,8 @@
       <a href="pricing.html" class="nav-link text-gray-700 hover:text-goat-green">Pricing</a>
       <a href="gallery.html" class="nav-link text-goat-green font-semibold">Gallery</a>
       <a href="faq.html" class="nav-link text-gray-700 hover:text-goat-green">FAQ</a>
-      <a href="contact.html" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
+      <button id="pidgin-toggle" title="What, you no unda stand those words? How dis!" class="text-xs font-semibold border-2 border-goat-brown/40 text-goat-brown hover:border-goat-orange hover:text-goat-orange px-3 py-1.5 rounded-full transition-all whitespace-nowrap">🤙 Speak Pidgin</button>
+      <a href="contact.html" data-pidgin="Eh, Free Quote!" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
     </div>
     <button id="nav-toggle" class="md:hidden p-2 text-goat-green rounded-lg" aria-label="Menu">
       <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -136,6 +137,7 @@
       <a href="gallery.html" class="py-2 px-3 rounded-lg bg-goat-green-pale text-goat-green font-medium">Gallery</a>
       <a href="faq.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">FAQ</a>
       <a href="contact.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Contact</a>
+      <button id="pidgin-toggle-mob" title="What, you no unda stand those words? How dis!" class="py-2 px-3 rounded-lg text-goat-brown hover:bg-goat-green-pale font-medium text-left w-full">🤙 Speak Pidgin</button>
       <a href="tel:+18083469737" class="mt-2 bg-goat-green text-white py-3 rounded-full text-center font-bold">📞 Call Now</a>
     </div>
   </div>
@@ -378,5 +380,6 @@
     if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
   });
 </script>
+<script src="pidgin.js"></script>
 </body>
 </html>

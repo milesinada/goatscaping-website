@@ -49,7 +49,8 @@
       <a href="pricing.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Pricing</a>
       <a href="gallery.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Gallery</a>
       <a href="faq.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">FAQ</a>
-      <a href="contact.html" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
+      <button id="pidgin-toggle" title="What, you no unda stand those words? How dis!" class="text-xs font-semibold border-2 border-goat-brown/40 text-goat-brown hover:border-goat-orange hover:text-goat-orange px-3 py-1.5 rounded-full transition-all whitespace-nowrap">🤙 Speak Pidgin</button>
+      <a href="contact.html" data-pidgin="Eh, Free Quote!" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
     </div>
     <button id="nav-toggle" class="md:hidden p-2 text-goat-green rounded-lg" aria-label="Open menu">
       <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -64,6 +65,7 @@
       <a href="gallery.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Gallery</a>
       <a href="faq.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">FAQ</a>
       <a href="contact.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Contact</a>
+      <button id="pidgin-toggle-mob" title="What, you no unda stand those words? How dis!" class="py-2 px-3 rounded-lg text-goat-brown hover:bg-goat-green-pale font-medium text-left w-full">🤙 Speak Pidgin</button>
       <a href="tel:+18083469737" class="mt-2 bg-goat-green text-white py-3 rounded-full text-center font-bold">📞 Call Now</a>
     </div>
   </div>
@@ -184,12 +186,12 @@
         <span class="inline-block bg-stone-100 text-stone-700 text-sm font-semibold px-3 py-1 rounded-full mb-4">Farm & Rural</span>
         <h2 class="font-display text-3xl md:text-4xl font-bold text-goat-green mb-4">Fence Line Clearing</h2>
         <p class="text-gray-600 text-lg leading-relaxed mb-6">
-          Fence lines are notorious for collecting overgrowth. Goats follow fence lines naturally and clear them thoroughly — ideal for farms, rural properties, and large acreage landowners.
+          Fence lines are notorious for collecting overgrowth. Goats follow fence lines naturally and clear them thoroughly — ideal for farms and rural properties.
         </p>
         <ul class="space-y-2 mb-8">
           <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Farms and ranches</li>
           <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Rural residential parcels</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Large acreage discounts</li>
+
           <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Works any time of year</li>
         </ul>
         <a href="contact.html" class="inline-flex items-center gap-2 bg-goat-brown text-white font-bold px-7 py-3 rounded-full hover:bg-amber-900 transition-all hover:scale-105">
@@ -272,5 +274,6 @@
     }, { threshold: 0.1 }).observe(el);
   }) : revealEls.forEach(el => el.classList.add('visible'));
 </script>
+<script src="pidgin.js"></script>
 </body>
 </html>

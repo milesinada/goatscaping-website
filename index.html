@@ -146,7 +146,7 @@
       <span class="text-2xl group-hover:scale-110 transition-transform inline-block">🐐</span>
       <div>
         <div class="font-display font-bold text-goat-green leading-tight text-lg">Kauai Goatscaping</div>
-        <div class="text-xs text-goat-brown tracking-wide">Weed Eaters</div>
+        <div class="text-xs text-goat-brown tracking-wide" data-pidgin="Da Weed Eataz 🤙">Weed Eaters</div>
       </div>
     </a>
     <!-- Desktop -->
@@ -156,7 +156,8 @@
       <a href="pricing.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Pricing</a>
       <a href="gallery.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Gallery</a>
       <a href="faq.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">FAQ</a>
-      <a href="contact.html" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
+      <button id="pidgin-toggle" title="What, you no unda stand those words? How dis!" class="text-xs font-semibold border-2 border-goat-brown/40 text-goat-brown hover:border-goat-orange hover:text-goat-orange px-3 py-1.5 rounded-full transition-all whitespace-nowrap">🤙 Speak Pidgin</button>
+      <a href="contact.html" data-pidgin="Eh, Free Quote!" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
     </div>
     <!-- Hamburger -->
     <button id="nav-toggle" class="md:hidden p-2 text-goat-green rounded-lg hover:bg-goat-green-pale transition-colors" aria-label="Open menu">
@@ -177,6 +178,7 @@
       <a href="gallery.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale hover:text-goat-green font-medium transition-colors">Gallery</a>
       <a href="faq.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale hover:text-goat-green font-medium transition-colors">FAQ</a>
       <a href="contact.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale hover:text-goat-green font-medium transition-colors">Contact</a>
+      <button id="pidgin-toggle-mob" title="What, you no unda stand those words? How dis!" class="py-2 px-3 rounded-lg text-goat-brown hover:bg-goat-green-pale font-medium text-left w-full">🤙 Speak Pidgin</button>
       <a href="tel:+18083469737" class="mt-2 bg-goat-green text-white py-3 rounded-full text-center font-bold">📞 Call Now</a>
     </div>
   </div>
@@ -201,26 +203,35 @@
 
   <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
     <div class="goat-anim text-6xl md:text-8xl mb-6">🐐</div>
-    <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-5 leading-tight hero-text">
+    <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-5 leading-tight hero-text" data-pidgin="Let Da Goats&lt;br&gt;Handle 'Em">
       Let the Goats<br>Handle It
     </h1>
-    <p class="text-xl sm:text-2xl mb-2 text-green-100 font-medium">
+    <p class="text-xl sm:text-2xl mb-2 text-green-100 font-medium" data-pidgin="Mo' bettah than machetes — and way more fun">
       Eco-friendly land clearing for Kauai properties
     </p>
-    <p class="text-base sm:text-lg text-green-200 mb-10">
+    <p class="text-base sm:text-lg text-green-200 mb-10" data-pidgin="No chemicals. No machines. No humbug. Just happy goats doing what they love.">
       No chemicals. No machines. Just happy goats doing what they love.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <a href="tel:+18083469737"
+         data-pidgin="📞 Eh, Call Already!"
          class="pulse bg-goat-orange hover:bg-orange-600 text-white font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105 flex items-center gap-2 w-full sm:w-auto justify-center">
         📞 Call Now
       </a>
       <a href="contact.html"
+         data-pidgin="Shoots, Free Quote"
          class="bg-white/15 hover:bg-white/25 backdrop-blur border-2 border-white/40 text-white font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105 flex items-center gap-2 w-full sm:w-auto justify-center">
         Get Free Quote
       </a>
     </div>
-    <a href="#how-it-works" class="inline-flex flex-col items-center gap-2 mt-14 text-white/60 hover:text-white transition-colors group">
+    <div class="mt-5 flex justify-center">
+      <button id="pidgin-hero-btn"
+        title="What, you no unda stand those words? How dis!"
+        class="flex items-center gap-2 border border-white/30 hover:border-white/70 text-white/70 hover:text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all hover:scale-105 backdrop-blur bg-white/5 hover:bg-white/15">
+        🤙 Speak Pidgin
+      </button>
+    </div>
+    <a href="#how-it-works" class="inline-flex flex-col items-center gap-2 mt-10 text-white/60 hover:text-white transition-colors group">
       <span class="text-sm tracking-wide">How It Works</span>
       <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -233,9 +244,9 @@
 <section id="how-it-works" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16 reveal">
-      <span class="inline-block bg-goat-green-pale text-goat-green text-sm font-semibold px-4 py-1 rounded-full mb-3">Simple Process</span>
+      <span class="inline-block bg-goat-green-pale text-goat-green text-sm font-semibold px-4 py-1 rounded-full mb-3" data-pidgin="Easy Kine">Simple Process</span>
       <h2 class="font-display text-3xl md:text-5xl font-bold text-goat-green mb-3">How It Works</h2>
-      <p class="text-gray-500 text-lg max-w-lg mx-auto">Three easy steps. Surprisingly satisfying to watch.</p>
+      <p class="text-gray-500 text-lg max-w-lg mx-auto" data-pidgin="Three easy steps. Surprisingly satisfying for watch.">Three easy steps. Surprisingly satisfying to watch.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-10">
       <div class="text-center reveal delay-1">
@@ -243,24 +254,24 @@
           <div class="w-20 h-20 bg-goat-green rounded-2xl flex items-center justify-center text-4xl card-lift mx-auto rotate-3 hover:rotate-0 transition-transform">🗺️</div>
           <div class="absolute -top-2 -right-2 w-8 h-8 bg-goat-orange rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
         </div>
-        <h3 class="font-display text-xl font-bold text-gray-800 mb-3">We Assess Your Property</h3>
-        <p class="text-gray-500 leading-relaxed">We come out, walk your land, and give you a free estimate based on terrain, density, and size. No obligation.</p>
+        <h3 class="font-display text-xl font-bold text-gray-800 mb-3" data-pidgin="We Come Check Out Your Land">We Assess Your Property</h3>
+        <p class="text-gray-500 leading-relaxed" data-pidgin="We come out, walk your land, and give you one free estimate based on terrain, density, and size. No need worry — no obligation.">We come out, walk your land, and give you a free estimate based on terrain, density, and size. No obligation.</p>
       </div>
       <div class="text-center reveal delay-2">
         <div class="relative inline-block mb-6">
           <div class="w-20 h-20 bg-goat-orange rounded-2xl flex items-center justify-center text-4xl card-lift mx-auto -rotate-2 hover:rotate-0 transition-transform">🐐</div>
           <div class="absolute -top-2 -right-2 w-8 h-8 bg-goat-green rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
         </div>
-        <h3 class="font-display text-xl font-bold text-gray-800 mb-3">Goats Clear in Sections</h3>
-        <p class="text-gray-500 leading-relaxed">Our herd works through your property in managed, fenced sections—eating weeds, brush, and invasive plants down to the roots.</p>
+        <h3 class="font-display text-xl font-bold text-gray-800 mb-3" data-pidgin="Da Goats Grind Through">Goats Clear in Sections</h3>
+        <p class="text-gray-500 leading-relaxed" data-pidgin="Our herd works through your property in managed, fenced sections — grinding down weeds, brush, and invasive plants all da way to da roots. Choke vegetation? No problem.">Our herd works through your property in managed, fenced sections—eating weeds, brush, and invasive plants down to the roots.</p>
       </div>
       <div class="text-center reveal delay-3">
         <div class="relative inline-block mb-6">
           <div class="w-20 h-20 bg-goat-brown rounded-2xl flex items-center justify-center text-4xl card-lift mx-auto rotate-2 hover:rotate-0 transition-transform">✅</div>
           <div class="absolute -top-2 -right-2 w-8 h-8 bg-goat-orange rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
         </div>
-        <h3 class="font-display text-xl font-bold text-gray-800 mb-3">We Return Until Done</h3>
-        <p class="text-gray-500 leading-relaxed">We come back until the job is complete. Ongoing maintenance plans available so your land stays clear year-round.</p>
+        <h3 class="font-display text-xl font-bold text-gray-800 mb-3" data-pidgin="We Come Back Till Pau">We Return Until Done</h3>
+        <p class="text-gray-500 leading-relaxed" data-pidgin="We come back till da job stay pau. Maintenance plans available so your land stays clear year-round. No need think about 'em again.">We come back until the job is complete. Ongoing maintenance plans available so your land stays clear year-round.</p>
       </div>
     </div>
   </div>
@@ -270,40 +281,40 @@
 <section class="py-24 bg-goat-beige">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16 reveal">
-      <span class="inline-block bg-goat-green text-white text-sm font-semibold px-4 py-1 rounded-full mb-3">The Goat Advantage</span>
-      <h2 class="font-display text-3xl md:text-5xl font-bold text-goat-green mb-3">Why Goats?</h2>
-      <p class="text-gray-500 text-lg max-w-lg mx-auto">The smarter, greener, and way more fun way to clear land</p>
+      <span class="inline-block bg-goat-green text-white text-sm font-semibold px-4 py-1 rounded-full mb-3" data-pidgin="Why Goats Stay Winning">The Goat Advantage</span>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-goat-green mb-3" data-pidgin="Why Goats, Brah?">Why Goats?</h2>
+      <p class="text-gray-500 text-lg max-w-lg mx-auto" data-pidgin="Smarter, greener, and mo' fun than you going expect">The smarter, greener, and way more fun way to clear land</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
       <div class="bg-white rounded-2xl p-6 card-lift reveal delay-1">
         <div class="text-4xl mb-3">🌿</div>
         <h3 class="font-semibold text-gray-800 mb-1">No Chemicals</h3>
-        <p class="text-sm text-gray-500">Zero herbicides or pesticides. Safe for your land, family, pets, and watershed.</p>
+        <p class="text-sm text-gray-500" data-pidgin="Zero herbicides or pesticides. Safe for your land, your 'ohana, your pets, and da watershed. Da kine clean.">Zero herbicides or pesticides. Safe for your land, family, pets, and watershed.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 card-lift reveal delay-2">
         <div class="text-4xl mb-3">🔇</div>
         <h3 class="font-semibold text-gray-800 mb-1">No Loud Machines</h3>
-        <p class="text-sm text-gray-500">Quiet, peaceful clearing. Your neighbors might even come watch.</p>
+        <p class="text-sm text-gray-500" data-pidgin="Quiet, peaceful clearing. Your neighbors going come watch — guarantee.">Quiet, peaceful clearing. Your neighbors might even come watch.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 card-lift reveal delay-3">
         <div class="text-4xl mb-3">⛰️</div>
-        <h3 class="font-semibold text-gray-800 mb-1">Steep Terrain</h3>
-        <p class="text-sm text-gray-500">Goats go where machines can't. No erosion, no slope risk, no problem.</p>
+        <h3 class="font-semibold text-gray-800 mb-1" data-pidgin="Steep? No Problem">Steep Terrain</h3>
+        <p class="text-sm text-gray-500" data-pidgin="Goats go where machines no can. No erosion, no slope risk, no problem.">Goats go where machines can't. No erosion, no slope risk, no problem.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 card-lift reveal delay-1">
         <div class="text-4xl mb-3">🌱</div>
-        <h3 class="font-semibold text-gray-800 mb-1">Soil-Friendly</h3>
-        <p class="text-sm text-gray-500">Natural fertilization as they graze. Goats actually improve your soil health.</p>
+        <h3 class="font-semibold text-gray-800 mb-1" data-pidgin="Good For Da ʻĀina">Soil-Friendly</h3>
+        <p class="text-sm text-gray-500" data-pidgin="Natural fertilization as they graze. Goats improve your soil health. Free fertilizer — shoots!">Natural fertilization as they graze. Goats actually improve your soil health.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 card-lift reveal delay-2">
         <div class="text-4xl mb-3">💰</div>
-        <h3 class="font-semibold text-gray-800 mb-1">Cost-Effective</h3>
-        <p class="text-sm text-gray-500">More affordable than repeated labor crews or heavy machinery. Long-term savings.</p>
+        <h3 class="font-semibold text-gray-800 mb-1" data-pidgin="Save Your Kala">Cost-Effective</h3>
+        <p class="text-sm text-gray-500" data-pidgin="More affordable than one labor crew or heavy machinery. Save your kala, brah. Long-term savings.">More affordable than repeated labor crews or heavy machinery. Long-term savings.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 card-lift reveal delay-3">
         <div class="text-4xl mb-3">😄</div>
-        <h3 class="font-semibold text-gray-800 mb-1">Fun to Watch</h3>
-        <p class="text-sm text-gray-500">It works AND it's entertaining. Your kids will absolutely love it.</p>
+        <h3 class="font-semibold text-gray-800 mb-1" data-pidgin="Hella Fun For Watch">Fun to Watch</h3>
+        <p class="text-sm text-gray-500" data-pidgin="It works AND it's entertaining. Your kids going love 'em — fo' real.">It works AND it's entertaining. Your kids will absolutely love it.</p>
       </div>
     </div>
   </div>
@@ -381,25 +392,25 @@
 <section class="py-24 bg-goat-green text-white overflow-hidden">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-14 reveal">
-      <span class="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1 rounded-full mb-3">Why Choose Us</span>
-      <h2 class="font-display text-3xl md:text-5xl font-bold mb-3">Trusted Local Service</h2>
-      <p class="text-green-200 text-lg">Kauai-based, community-focused, and committed to doing the job right</p>
+      <span class="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1 rounded-full mb-3" data-pidgin="Why Us Guys Though">Why Choose Us</span>
+      <h2 class="font-display text-3xl md:text-5xl font-bold mb-3" data-pidgin="Us Guys, We Local">Trusted Local Service</h2>
+      <p class="text-green-200 text-lg" data-pidgin="From Kauai, for Kauai — we not going disappear on you">Kauai-based, community-focused, and committed to doing the job right</p>
     </div>
     <div class="grid md:grid-cols-3 gap-8 text-center">
       <div class="reveal delay-1">
         <div class="text-6xl mb-5">🌺</div>
-        <h3 class="font-display text-xl font-bold mb-3">Local Kauai Service</h3>
-        <p class="text-green-200 leading-relaxed">We know this island — its terrain, its plants, its people. Born and raised on Kauai.</p>
+        <h3 class="font-display text-xl font-bold mb-3" data-pidgin="We From Hea, Brah">Local Kauai Service</h3>
+        <p class="text-green-200 leading-relaxed" data-pidgin="We know dis island — da terrain, da plants, da people. Born and raised, brah. Local kine all da way.">We know this island — its terrain, its plants, its people. Born and raised on Kauai.</p>
       </div>
       <div class="reveal delay-2">
         <div class="text-6xl mb-5">🔒</div>
-        <h3 class="font-display text-xl font-bold mb-3">Managed Grazing System</h3>
-        <p class="text-green-200 leading-relaxed">Controlled, fenced grazing areas. Your property and our animals are always safe.</p>
+        <h3 class="font-display text-xl font-bold mb-3" data-pidgin="Da Goats Stay In Line">Managed Grazing System</h3>
+        <p class="text-green-200 leading-relaxed" data-pidgin="Controlled, fenced grazing areas. Your property and our animals always safe. We no let 'em run loose.">Controlled, fenced grazing areas. Your property and our animals are always safe.</p>
       </div>
       <div class="reveal delay-3">
         <div class="text-6xl mb-5">⭐</div>
-        <h3 class="font-display text-xl font-bold mb-3">Safe & Professional</h3>
-        <p class="text-green-200 leading-relaxed">Clear communication, reliable scheduling, and real results every single time.</p>
+        <h3 class="font-display text-xl font-bold mb-3" data-pidgin="Solid, No Joke">Safe & Professional</h3>
+        <p class="text-green-200 leading-relaxed" data-pidgin="Clear communication, reliable scheduling, and real results every single time. No shibai.">Clear communication, reliable scheduling, and real results every single time.</p>
       </div>
     </div>
   </div>
@@ -409,20 +420,20 @@
 <section class="py-28 bg-goat-beige">
   <div class="max-w-3xl mx-auto px-6 text-center reveal">
     <div class="goat-anim text-6xl mb-6">🐐</div>
-    <h2 class="font-display text-3xl sm:text-5xl font-bold text-goat-green mb-5 leading-tight">
+    <h2 class="font-display text-3xl sm:text-5xl font-bold text-goat-green mb-5 leading-tight" data-pidgin="Eh, Get Your Free Estimate Already!">
       Get a Free Estimate Today
     </h2>
-    <p class="text-gray-500 text-xl mb-10 max-w-xl mx-auto leading-relaxed">
+    <p class="text-gray-500 text-xl mb-10 max-w-xl mx-auto leading-relaxed" data-pidgin="No need get yourself itchy in da guinea grass — send us one photo and we going get back to you fast. Local service. Fast kine response. Fo' real results.">
       Send a photo of your property and we'll get back to you fast. Local service. Fast response. Real results.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="contact.html" class="pulse bg-goat-orange hover:bg-orange-600 text-white font-bold px-10 py-4 rounded-full text-lg transition-all hover:scale-105">
+      <a href="contact.html" data-pidgin="Shoots, Let's Go!" class="pulse bg-goat-orange hover:bg-orange-600 text-white font-bold px-10 py-4 rounded-full text-lg transition-all hover:scale-105">
         Get Free Quote
       </a>
-      <a href="tel:+18083469737" class="bg-goat-green hover:bg-green-800 text-white font-bold px-10 py-4 rounded-full text-lg transition-all hover:scale-105">
+      <a href="tel:+18083469737" data-pidgin="📞 Eh, Call Already!" class="bg-goat-green hover:bg-green-800 text-white font-bold px-10 py-4 rounded-full text-lg transition-all hover:scale-105">
         📞 Call Us Now
       </a>
-      <a href="sms:+18083469737" class="border-2 border-goat-green text-goat-green hover:bg-goat-green hover:text-white font-bold px-10 py-4 rounded-full text-lg transition-all hover:scale-105">
+      <a href="sms:+18083469737" data-pidgin="💬 Text Us Real Quick" class="border-2 border-goat-green text-goat-green hover:bg-goat-green hover:text-white font-bold px-10 py-4 rounded-full text-lg transition-all hover:scale-105">
         💬 Text Us
       </a>
     </div>
@@ -477,6 +488,7 @@
 <!-- ========== STICKY MOBILE CTA ========== -->
 <div class="md:hidden sticky-cta">
   <a href="tel:+18083469737"
+     data-pidgin="📞 Eh, Call Us Already!"
      class="bg-goat-orange text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-sm whitespace-nowrap">
     📞 Call Now — Free Quote
   </a>
@@ -521,5 +533,6 @@
   document.addEventListener('touchmove', e => { if (baDrag) setBA(e.touches[0].clientX); }, { passive: true });
   document.addEventListener('touchend', () => baDrag = false);
 </script>
+<script src="pidgin.js"></script>
 </body>
 </html>
