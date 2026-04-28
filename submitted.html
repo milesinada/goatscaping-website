@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Received – Kauai Goatscaping</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { goat: { green:'#2D6A4F','green-light':'#40916C','green-pale':'#D8F3DC',brown:'#6B4226',beige:'#F5EFE6',orange:'#E07B39' } } } }
+    }
+  </script>
+  <style>
+    .font-display { font-family: 'Playfair Display', Georgia, serif; }
+    html { scroll-behavior: smooth; }
+    .nav-link { position: relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-3px; left:0; width:0; height:2px; background:#E07B39; transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    @keyframes pulse-ring { 0%,100%{box-shadow:0 0 0 0 rgba(224,123,57,.45)} 50%{box-shadow:0 0 0 14px rgba(224,123,57,0)} }
+    .pulse { animation: pulse-ring 2.4s infinite; }
+    @keyframes floaty { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-5px)} }
+    .sticky-cta { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:999; animation:floaty 3s ease-in-out infinite; }
+    ::-webkit-scrollbar { width:7px; }
+    ::-webkit-scrollbar-track { background:#F5EFE6; }
+    ::-webkit-scrollbar-thumb { background:#2D6A4F; border-radius:4px; }
+
+    @keyframes goat-bounce {
+      0%,100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-14px) rotate(3deg); }
+    }
+    .goat-anim { animation: goat-bounce 2.5s ease-in-out infinite; display: inline-block; }
+
+    @keyframes check-pop {
+      0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+      70% { transform: scale(1.15) rotate(3deg); }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    .check-pop { animation: check-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: none; }
+    }
+    .fade-up-1 { animation: fade-up .5s ease .7s both; }
+    .fade-up-2 { animation: fade-up .5s ease .9s both; }
+    .fade-up-3 { animation: fade-up .5s ease 1.1s both; }
+  </style>
+</head>
+<body style="font-family:'Inter',sans-serif;" class="bg-goat-beige text-gray-800">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 group">
+      <img src="assets/Goatscaping%20logo.png" alt="Kauai Goatscaping" class="h-10 w-10 object-contain group-hover:scale-110 transition-transform flex-shrink-0">
+      <div>
+        <div class="font-display font-bold text-goat-green leading-tight text-lg">Kauai Goatscaping</div>
+        <div class="text-xs text-goat-brown tracking-wide" data-pidgin="Da Weed Eataz 🤙">Weed Eaters</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+      <a href="index.html" class="nav-link text-gray-700 hover:text-goat-green">Home</a>
+      <a href="services.html" class="nav-link text-gray-700 hover:text-goat-green">Services</a>
+      <a href="pricing.html" class="nav-link text-gray-700 hover:text-goat-green">Pricing</a>
+      <a href="gallery.html" class="nav-link text-gray-700 hover:text-goat-green">Gallery</a>
+      <a href="faq.html" class="nav-link text-gray-700 hover:text-goat-green">FAQ</a>
+      <button id="pidgin-toggle" title="What, you no unda stand those words? How dis!" class="text-xs font-semibold border-2 border-goat-brown/40 text-goat-brown hover:border-goat-orange hover:text-goat-orange px-3 py-1.5 rounded-full transition-all whitespace-nowrap">🤙 Speak Pidgin</button>
+      <a href="contact.html" data-pidgin="Eh, Free Quote!" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
+    </div>
+    <button id="nav-toggle" class="md:hidden p-2 text-goat-green rounded-lg" aria-label="Menu">
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+    <div class="flex flex-col px-4 py-4 gap-1">
+      <a href="index.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Home</a>
+      <a href="services.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Services</a>
+      <a href="pricing.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Pricing</a>
+      <a href="gallery.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Gallery</a>
+      <a href="faq.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">FAQ</a>
+      <a href="contact.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Contact</a>
+      <button id="pidgin-toggle-mob" title="What, you no unda stand those words? How dis!" class="py-2 px-3 rounded-lg text-goat-brown hover:bg-goat-green-pale font-medium text-left w-full">🤙 Speak Pidgin</button>
+      <a href="tel:+18083469737" class="mt-2 bg-goat-green text-white py-3 rounded-full text-center font-bold">📞 Call Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="min-h-screen flex items-center justify-center pt-20 pb-16 px-6">
+  <div class="max-w-xl w-full text-center">
+
+    <!-- Bouncing logo -->
+    <div class="goat-anim mb-6 mx-auto w-24 h-24 rounded-full bg-white shadow-xl overflow-hidden">
+      <img src="assets/Goatscaping%20logo.png" alt="" class="w-full h-full object-contain p-1">
+    </div>
+
+    <!-- Big check -->
+    <div class="check-pop inline-flex items-center justify-center w-20 h-20 rounded-full bg-goat-green text-white text-4xl mb-6 shadow-lg">
+      ✓
+    </div>
+
+    <h1 class="font-display text-4xl md:text-5xl font-bold text-goat-green mb-4 fade-up-1" data-pidgin="Shoots! We Got Your Request!">
+      Got It — We're On It!
+    </h1>
+    <p class="text-gray-600 text-lg mb-3 fade-up-2" data-pidgin="We going call or text you back within couple hours, brah. Keep your phone close!">
+      We'll call or text you back within a few hours to talk through your property.
+    </p>
+    <p class="text-gray-500 mb-10 fade-up-2" data-pidgin="If you stay itchy for get going — just call us direct.">
+      In a hurry? Just call us directly.
+    </p>
+
+    <!-- Actions -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 fade-up-3">
+      <a href="tel:+18083469737"
+         data-pidgin="📞 Eh, Call Already!"
+         class="pulse bg-goat-orange hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full text-lg transition-all hover:scale-105 flex items-center gap-2 justify-center">
+        📞 Call Now
+      </a>
+      <a href="index.html"
+         data-pidgin="🏠 Back To Home"
+         class="bg-goat-green hover:bg-green-800 text-white font-bold px-8 py-4 rounded-full text-lg transition-all hover:scale-105 flex items-center gap-2 justify-center">
+        🏠 Back to Home
+      </a>
+    </div>
+
+    <!-- What happens next -->
+    <div class="bg-white rounded-2xl p-6 text-left shadow-sm fade-up-3">
+      <h3 class="font-semibold text-gray-800 mb-4 text-center" data-pidgin="What Going Happen Next">What Happens Next</h3>
+      <ol class="space-y-3 text-sm text-gray-600">
+        <li class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-goat-green text-white text-xs flex items-center justify-center font-bold mt-0.5 flex-shrink-0">1</span>
+          <span data-pidgin="We check out your request and any photos you wen send">We review your request and any photos you sent</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-goat-orange text-white text-xs flex items-center justify-center font-bold mt-0.5 flex-shrink-0">2</span>
+          <span data-pidgin="We call or text you back — usually same day — with one ballpark number">We call or text you back — usually same day — with a ballpark estimate</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-goat-brown text-white text-xs flex items-center justify-center font-bold mt-0.5 flex-shrink-0">3</span>
+          <span data-pidgin="We come out for one free site visit fo' lock in da price">We schedule a free site visit to confirm pricing</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-goat-green text-white text-xs flex items-center justify-center font-bold mt-0.5 flex-shrink-0">4</span>
+          <span data-pidgin="Goats show up. Land get cleared. You going be amazed, gaurantee.">Goats show up. Land gets cleared. You're amazed.</span>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-10">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-white overflow-hidden flex-shrink-0"><img src="assets/Goatscaping%20logo.png" alt="" class="w-full h-full object-contain p-0.5"></div>
+      <span class="text-gray-400">Kauai Goatscaping · Kalaheo, Kauai</span>
+    </div>
+    <div class="flex gap-4">
+      <a href="tel:+18083469737" class="hover:text-white transition-colors">📞 (808) 346-9737</a>
+      <span>·</span>
+      <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<div class="md:hidden sticky-cta">
+  <a href="tel:+18083469737"
+     data-pidgin="📞 Eh, Call Us Already!"
+     class="bg-goat-orange text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-sm whitespace-nowrap">
+    📞 Call Now — Free Quote
+  </a>
+</div>
+
+<script>
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+    document.getElementById('icon-open').classList.toggle('hidden');
+    document.getElementById('icon-close').classList.toggle('hidden');
+  });
+</script>
+<script src="pidgin.js"></script>
+</body>
+</html>
