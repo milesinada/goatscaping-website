@@ -15,7 +15,8 @@
     }
   </script>
   <style>
-    .font-display{font-family:'Playfair Display',Georgia,serif}
+    .font-display{font-family:'Playfair Display',Georgia,serif;letter-spacing:-0.025em}
+    .footer-accent{height:3px;background:linear-gradient(90deg,#2D6A4F,#E07B39,#2D6A4F)}
     html{scroll-behavior:smooth}
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
     .reveal.visible{opacity:1;transform:none}
@@ -98,7 +99,7 @@
   <div class="absolute inset-0 opacity-10" style="background-image:url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23fff\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/svg%3E');"></div>
   <div class="relative z-10 max-w-3xl mx-auto px-6">
     <div class="text-5xl mb-4">❓</div>
-    <h1 class="font-display text-4xl md:text-6xl font-bold mb-4">Frequently Asked Questions</h1>
+    <h1 class="font-display text-4xl md:text-6xl font-bold mb-4 tracking-tight">Frequently Asked Questions</h1>
     <p class="text-green-200 text-xl max-w-xl mx-auto" data-pidgin="Everyting you like fo' know about goatscaping on Kauai">Everything you wanted to know about goatscaping on Kauai</p>
   </div>
   <div class="absolute bottom-0 left-0 right-0">
@@ -350,6 +351,7 @@
 </section>
 
 <!-- FOOTER -->
+<div class="footer-accent"></div>
 <footer class="bg-gray-900 text-white py-14">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-3 gap-10 mb-10">
