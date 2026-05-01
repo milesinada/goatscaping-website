@@ -159,132 +159,128 @@
   </div>
 </section>
 
-<!-- PHOTO ADD INSTRUCTIONS BANNER -->
-<div class="bg-amber-50 border-b border-amber-200">
-  <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center gap-3">
-    <span class="text-2xl">💡</span>
-    <p class="text-amber-800 text-sm text-center sm:text-left">
-      <strong>Add your photos:</strong> Replace each placeholder below with <code class="bg-amber-100 px-1 rounded">&lt;img src="your-photo.jpg" alt="description"&gt;</code> inside each <code class="bg-amber-100 px-1 rounded">.gallery-item</code> div. Use WebP format for best performance.
-    </p>
-  </div>
-</div>
-
-<!-- FILTER TABS -->
-<section class="py-8 bg-goat-beige">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-wrap gap-3 justify-center">
-      <button class="filter-btn active bg-goat-green text-white px-5 py-2 rounded-full text-sm font-semibold transition-all" data-filter="all">All Photos</button>
-      <button class="filter-btn bg-white text-gray-600 hover:bg-goat-green-pale px-5 py-2 rounded-full text-sm font-semibold transition-all" data-filter="before-after">Before & After</button>
-      <button class="filter-btn bg-white text-gray-600 hover:bg-goat-green-pale px-5 py-2 rounded-full text-sm font-semibold transition-all" data-filter="goats">Goats at Work</button>
-      <button class="filter-btn bg-white text-gray-600 hover:bg-goat-green-pale px-5 py-2 rounded-full text-sm font-semibold transition-all" data-filter="terrain">Terrain</button>
-    </div>
-  </div>
-</section>
-
 <!-- GALLERY GRID -->
-<section class="pb-24 bg-goat-beige">
+<section class="py-10 pb-24 bg-goat-beige">
   <div class="max-w-6xl mx-auto px-6">
-    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
 
-      <!-- Item 1 — BEFORE photo -->
-      <div class="gallery-item col-span-2 row-span-2 reveal delay-1" style="min-height:300px;" data-category="before-after" data-caption="Steep hillside — Before clearing">
-        <div class="ph w-full h-full bg-gradient-to-br from-amber-800 to-green-950 flex items-center justify-center min-h-[300px]">
-          <div class="text-center text-white/50 p-4"><div class="text-5xl mb-2">📷</div><p class="text-sm font-semibold">BEFORE Photo</p><p class="text-xs mt-1">Steep hillside clearing</p></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="text-white text-sm font-semibold">Steep Hillside — Before</span>
-        </div>
-        <div class="absolute top-3 left-3 bg-amber-700 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</div>
+      <div class="gallery-item col-span-2 reveal delay-1" style="height:280px;" data-index="0" data-caption="Kauai Goatscaping — Photo 1">
+        <img src="assets/img/goatscaping/goatscaping_1.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-2" style="height:280px;" data-index="1" data-caption="Kauai Goatscaping — Photo 2">
+        <img src="assets/img/goatscaping/goatscaping_2.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-3" style="height:280px;" data-index="2" data-caption="Kauai Goatscaping — Photo 3">
+        <img src="assets/img/goatscaping/goatscaping_3.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
 
-      <!-- Item 2 — AFTER photo -->
-      <div class="gallery-item col-span-2 row-span-2 reveal delay-2" style="min-height:300px;" data-category="before-after" data-caption="Steep hillside — After 3 days of grazing">
-        <div class="ph w-full h-full bg-gradient-to-br from-green-700 to-emerald-900 flex items-center justify-center min-h-[300px]">
-          <div class="text-center text-white/50 p-4"><div class="text-5xl mb-2">📷</div><p class="text-sm font-semibold">AFTER Photo</p><p class="text-xs mt-1">After 3 days grazing</p></div>
-        </div>
-        <div class="gallery-overlay">
-          <span class="text-white text-sm font-semibold">Steep Hillside — After 3 Days</span>
-        </div>
-        <div class="absolute top-3 left-3 bg-goat-green text-white text-xs font-bold px-2 py-1 rounded-full">AFTER</div>
+      <div class="gallery-item reveal delay-1" style="height:220px;" data-index="3" data-caption="Kauai Goatscaping — Photo 4">
+        <img src="assets/img/goatscaping/goatscaping_4.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-2" style="height:220px;" data-index="4" data-caption="Kauai Goatscaping — Photo 5">
+        <img src="assets/img/goatscaping/goatscaping_5.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-3" style="height:220px;" data-index="5" data-caption="Kauai Goatscaping — Photo 6">
+        <img src="assets/img/goatscaping/goatscaping_6.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-4" style="height:220px;" data-index="6" data-caption="Kauai Goatscaping — Photo 7">
+        <img src="assets/img/goatscaping/goatscaping_7.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
 
-      <!-- Item 3 -->
-      <div class="gallery-item reveal delay-1" style="min-height:200px;" data-category="goats" data-caption="The herd on the job">
-        <div class="ph w-full h-full bg-gradient-to-br from-green-600 to-teal-800 flex items-center justify-center min-h-[200px]">
-          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🐐</div><p class="text-xs">Goats at work</p></div>
-        </div>
-        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">The herd on the job</span></div>
+      <div class="gallery-item reveal delay-1" style="height:220px;" data-index="7" data-caption="Kauai Goatscaping — Photo 8">
+        <img src="assets/img/goatscaping/goatscaping_8.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item col-span-2 reveal delay-2" style="height:220px;" data-index="8" data-caption="Kauai Goatscaping — Photo 9">
+        <img src="assets/img/goatscaping/goatscaping_9.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-3" style="height:220px;" data-index="9" data-caption="Kauai Goatscaping — Photo 10">
+        <img src="assets/img/goatscaping/goatscaping_10.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
 
-      <!-- Item 4 -->
-      <div class="gallery-item reveal delay-2" style="min-height:200px;" data-category="terrain" data-caption="Rocky Kauai terrain">
-        <div class="ph w-full h-full bg-gradient-to-br from-stone-600 to-stone-900 flex items-center justify-center min-h-[200px]">
-          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">⛰️</div><p class="text-xs">Rocky terrain</p></div>
-        </div>
-        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Rocky Kauai Terrain</span></div>
+      <div class="gallery-item reveal delay-1" style="height:220px;" data-index="10" data-caption="Kauai Goatscaping — Photo 11">
+        <img src="assets/img/goatscaping/goatscaping_11.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-2" style="height:220px;" data-index="11" data-caption="Kauai Goatscaping — Photo 12">
+        <img src="assets/img/goatscaping/goatscaping_12.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-3" style="height:220px;" data-index="12" data-caption="Kauai Goatscaping — Photo 13">
+        <img src="assets/img/goatscaping/goatscaping_13.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-4" style="height:220px;" data-index="13" data-caption="Kauai Goatscaping — Photo 14">
+        <img src="assets/img/goatscaping/goatscaping_14.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
 
-      <!-- Item 5 -->
-      <div class="gallery-item reveal delay-3" style="min-height:200px;" data-category="goats" data-caption="Goat closeup — our best worker">
-        <div class="ph w-full h-full bg-gradient-to-br from-lime-700 to-green-900 flex items-center justify-center min-h-[200px]">
-          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🐐</div><p class="text-xs">Closeup</p></div>
-        </div>
-        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Our Best Worker</span></div>
+      <div class="gallery-item col-span-2 reveal delay-1" style="height:260px;" data-index="14" data-caption="Kauai Goatscaping — Photo 15">
+        <img src="assets/img/goatscaping/goatscaping_15.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-2" style="height:260px;" data-index="15" data-caption="Kauai Goatscaping — Photo 16">
+        <img src="assets/img/goatscaping/goatscaping_16.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-3" style="height:260px;" data-index="16" data-caption="Kauai Goatscaping — Photo 17">
+        <img src="assets/img/goatscaping/goatscaping_17.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
 
-      <!-- Item 6 -->
-      <div class="gallery-item reveal delay-4" style="min-height:200px;" data-category="before-after" data-caption="Fence line — before">
-        <div class="ph w-full h-full bg-gradient-to-br from-amber-700 to-amber-900 flex items-center justify-center min-h-[200px]">
-          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">📷</div><p class="text-xs">Fence line before</p></div>
-        </div>
-        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Fence Line — Before</span></div>
-        <div class="absolute top-3 left-3 bg-amber-700 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</div>
+      <div class="gallery-item reveal delay-1" style="height:220px;" data-index="17" data-caption="Kauai Goatscaping — Photo 18">
+        <img src="assets/img/goatscaping/goatscaping_18.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-2" style="height:220px;" data-index="18" data-caption="Kauai Goatscaping — Photo 19">
+        <img src="assets/img/goatscaping/goatscaping_19.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-3" style="height:220px;" data-index="19" data-caption="Kauai Goatscaping — Photo 20">
+        <img src="assets/img/goatscaping/goatscaping_20.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-4" style="height:220px;" data-index="20" data-caption="Kauai Goatscaping — Photo 21">
+        <img src="assets/img/goatscaping/goatscaping_21.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
 
-      <!-- Item 7 -->
-      <div class="gallery-item col-span-2 reveal delay-1" style="min-height:220px;" data-category="before-after" data-caption="Fence line — after">
-        <div class="ph w-full h-full bg-gradient-to-br from-emerald-600 to-green-800 flex items-center justify-center min-h-[220px]">
-          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">📷</div><p class="text-xs">Fence line after</p></div>
-        </div>
-        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Fence Line — After</span></div>
-        <div class="absolute top-3 left-3 bg-goat-green text-white text-xs font-bold px-2 py-1 rounded-full">AFTER</div>
+      <div class="gallery-item reveal delay-1" style="height:220px;" data-index="21" data-caption="Kauai Goatscaping — Photo 22">
+        <img src="assets/img/goatscaping/goatscaping_22.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item col-span-2 reveal delay-2" style="height:220px;" data-index="22" data-caption="Kauai Goatscaping — Photo 23">
+        <img src="assets/img/goatscaping/goatscaping_23.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
+      </div>
+      <div class="gallery-item reveal delay-3" style="height:220px;" data-index="23" data-caption="Kauai Goatscaping — Photo 24">
+        <img src="assets/img/goatscaping/goatscaping_24.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
 
-      <!-- Item 8 -->
-      <div class="gallery-item reveal delay-2" style="min-height:200px;" data-category="terrain" data-caption="View from the hill after clearing">
-        <div class="ph w-full h-full bg-gradient-to-br from-sky-700 to-green-900 flex items-center justify-center min-h-[200px]">
-          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🌺</div><p class="text-xs">Kauai view</p></div>
-        </div>
-        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">View From the Hill</span></div>
+      <div class="gallery-item reveal delay-1" style="height:220px;" data-index="24" data-caption="Kauai Goatscaping — Photo 25">
+        <img src="assets/img/goatscaping/goatscaping_25.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
-
-      <!-- Item 9 -->
-      <div class="gallery-item reveal delay-3" style="min-height:200px;" data-category="goats" data-caption="Herd grazing in a managed section">
-        <div class="ph w-full h-full bg-gradient-to-br from-teal-700 to-green-950 flex items-center justify-center min-h-[200px]">
-          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🐐</div><p class="text-xs">Managed grazing</p></div>
-        </div>
-        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Managed Section Grazing</span></div>
+      <div class="gallery-item reveal delay-2" style="height:220px;" data-index="25" data-caption="Kauai Goatscaping — Photo 26">
+        <img src="assets/img/goatscaping/goatscaping_26.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
-
-      <!-- Item 10 -->
-      <div class="gallery-item reveal delay-4" style="min-height:200px;" data-category="terrain" data-caption="Overgrown before we arrived">
-        <div class="ph w-full h-full bg-gradient-to-br from-yellow-800 to-amber-950 flex items-center justify-center min-h-[200px]">
-          <div class="text-center text-white/50 p-4"><div class="text-4xl mb-1">🌿</div><p class="text-xs">Before arrival</p></div>
-        </div>
-        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Overgrown — Before We Arrived</span></div>
-        <div class="absolute top-3 left-3 bg-amber-700 text-white text-xs font-bold px-2 py-1 rounded-full">BEFORE</div>
-      </div>
-
-      <!-- Item 11 -->
-      <div class="gallery-item col-span-2 reveal delay-5" style="min-height:220px;" data-category="goats" data-caption="Happy goats, happy customers">
-        <div class="ph w-full h-full bg-gradient-to-br from-green-600 to-lime-900 flex items-center justify-center min-h-[220px]">
-          <div class="text-center text-white/50 p-4"><div class="text-5xl mb-1">🐐🐐🐐</div><p class="text-xs">Happy herd</p></div>
-        </div>
-        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Happy Goats, Happy Customers</span></div>
+      <div class="gallery-item col-span-2 reveal delay-3" style="height:220px;" data-index="26" data-caption="Kauai Goatscaping — Photo 27">
+        <img src="assets/img/goatscaping/goatscaping_27.jpeg" alt="Goatscaping Kauai" loading="lazy">
+        <div class="gallery-overlay"><span class="text-white text-sm font-semibold">Kauai Goatscaping</span></div>
       </div>
 
     </div>
-    <p class="text-center text-gray-400 text-sm mt-8">📸 Photos coming soon — check back as we document more jobs across Kauai</p>
   </div>
 </section>
 
@@ -320,11 +316,14 @@
 
 <!-- Lightbox -->
 <div id="lightbox">
+  <button id="lightbox-prev" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:10;" aria-label="Previous">‹</button>
   <div id="lightbox-content">
     <img id="lightbox-img" src="" alt="">
     <div id="lightbox-caption"></div>
     <button id="lightbox-close">✕</button>
+    <div id="lightbox-counter" style="position:absolute;bottom:14px;right:16px;color:rgba(255,255,255,0.6);font-size:12px;font-family:'Inter',sans-serif;"></div>
   </div>
+  <button id="lightbox-next" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:10;" aria-label="Next">›</button>
 </div>
 
 <script>
@@ -342,46 +341,48 @@
     }, { threshold: 0.08 }).observe(el);
   });
 
-  // Filter tabs
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.remove('active', 'bg-goat-green', 'text-white');
-        b.classList.add('bg-white', 'text-gray-600');
-      });
-      btn.classList.add('active', 'bg-goat-green', 'text-white');
-      btn.classList.remove('bg-white', 'text-gray-600');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.gallery-item').forEach(item => {
-        item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
-      });
-    });
+  // Lightbox with prev/next
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    const item = items[index];
+    const img = item.querySelector('img');
+    if (!img) return;
+    currentIndex = index;
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = img.alt;
+    document.getElementById('lightbox-caption').textContent = item.dataset.caption || '';
+    document.getElementById('lightbox-counter').textContent = (index + 1) + ' / ' + items.length;
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
   });
 
-  // Lightbox (opens on click — shows caption; if real img present, shows it)
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const caption = item.dataset.caption || '';
-      const img = item.querySelector('img');
-      const lb = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lightbox-img');
-      const lbCap = document.getElementById('lightbox-caption');
-      if (img) {
-        lbImg.src = img.src;
-        lbImg.alt = img.alt;
-        lbImg.style.display = 'block';
-      } else {
-        lbImg.style.display = 'none';
-      }
-      lbCap.textContent = caption;
-      lb.classList.add('open');
-    });
-  });
-  document.getElementById('lightbox-close').addEventListener('click', () => {
-    document.getElementById('lightbox').classList.remove('open');
-  });
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
   document.getElementById('lightbox').addEventListener('click', e => {
-    if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
+    if (e.target === e.currentTarget) closeLightbox();
+  });
+  document.getElementById('lightbox-prev').addEventListener('click', e => {
+    e.stopPropagation();
+    openLightbox((currentIndex - 1 + items.length) % items.length);
+  });
+  document.getElementById('lightbox-next').addEventListener('click', e => {
+    e.stopPropagation();
+    openLightbox((currentIndex + 1) % items.length);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + items.length) % items.length);
+    if (e.key === 'ArrowRight') openLightbox((currentIndex + 1) % items.length);
   });
 </script>
 <script src="pidgin.js"></script>
