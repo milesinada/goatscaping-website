@@ -72,7 +72,7 @@
 
     /* Before/after slider */
     .ba-wrap { position: relative; overflow: hidden; cursor: col-resize; user-select: none; }
-    .ba-after { position: absolute; inset: 0; }
+    .ba-after { position: absolute; inset: 0; width: 100%; height: 100%; }
     .ba-before {
       position: absolute; top: 0; left: 0;
       width: 50%; height: 100%; overflow: hidden;
@@ -387,16 +387,10 @@
     <div class="reveal">
       <!-- Replace the gradient divs below with actual <img> tags once you have photos -->
       <div id="ba-container" class="ba-wrap rounded-2xl shadow-2xl" style="height:420px;">
-        <!-- AFTER background -->
-        <div class="ba-after rounded-2xl overflow-hidden">
-          <img src="assets/img/goatscaping/goatscaping_12.jpeg" alt="After goatscaping" class="w-full h-full object-cover">
-        </div>
-        <!-- BEFORE top layer -->
-        <div id="ba-before" class="ba-before">
-          <div class="ba-before-inner rounded-l-2xl overflow-hidden">
-            <img src="assets/img/goatscaping/goatscaping_10.jpeg" alt="Before goatscaping" class="absolute inset-0 w-full h-full object-cover" style="width:200%;max-width:200%;">
-          </div>
-        </div>
+        <!-- AFTER — full size, sits behind -->
+        <img src="assets/img/goatscaping/goatscaping_12.jpeg" alt="After goatscaping" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:1rem;">
+        <!-- BEFORE — full size, clip-path masks the right side -->
+        <img id="ba-before-img" src="assets/img/goatscaping/goatscaping_10.jpeg" alt="Before goatscaping" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:1rem;clip-path:inset(0 50% 0 0);">
         <!-- Handle -->
         <div id="ba-handle" class="ba-handle">
           <div class="ba-knob">⟺</div>
@@ -566,14 +560,14 @@
 
   // Before/after slider
   const baCont = document.getElementById('ba-container');
-  const baBefore = document.getElementById('ba-before');
+  const baBeforeImg = document.getElementById('ba-before-img');
   const baHandle = document.getElementById('ba-handle');
   let baDrag = false;
 
   function setBA(x) {
     const r = baCont.getBoundingClientRect();
-    let pct = Math.max(4, Math.min(96, ((x - r.left) / r.width) * 100));
-    baBefore.style.width = pct + '%';
+    const pct = Math.max(2, Math.min(98, ((x - r.left) / r.width) * 100));
+    baBeforeImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
     baHandle.style.left = pct + '%';
   }
 
