@@ -4,10 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="assets/Goatscaping%20logo.png">
-  <title>Services – Kauai Goatscaping | Land Clearing Kauai</title>
-  <meta name="description" content="Hillside clearing, overgrown property cleanup, maintenance grazing, and fence line clearing. Eco-friendly goatscaping services across Kauai, Hawaii.">
+  <title>Goatscaping Services Kauai | Hillside Clearing, Brush Removal & Maintenance Grazing</title>
+  <meta name="description" content="Goatscaping services across Kauai: hillside & steep terrain clearing, overgrown property cleanup, maintenance grazing, and fence line clearing. No chemicals. Free estimates.">
+  <link rel="canonical" href="https://kauaigoats.com/services.html">
+  <meta property="og:title" content="Goatscaping Services Kauai | Hillside Clearing & Brush Removal">
+  <meta property="og:description" content="Hillside clearing, brush removal, maintenance grazing, and fence line clearing across Kauai. No chemicals. Free estimates.">
+  <meta property="og:image" content="https://kauaigoats.com/assets/goatsg-logo-big.png">
+  <meta property="og:url" content="https://kauaigoats.com/services.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kauai Goatscaping">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://kauaigoats.com/assets/goatsg-logo-big.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Goatscaping Services – Kauai",
+    "itemListElement": [
+      {
+        "@type": "ListItem", "position": 1,
+        "item": {
+          "@type": "Service",
+          "name": "Hillside & Steep Terrain Clearing",
+          "description": "Goat-powered land clearing for steep and rocky terrain on Kauai where machinery can't safely operate. No erosion, no slope risk.",
+          "provider": { "@type": "LocalBusiness", "name": "Kauai Goatscaping", "telephone": "+18083469737" },
+          "areaServed": "Kauai, Hawaii"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 2,
+        "item": {
+          "@type": "Service",
+          "name": "Overgrown Property Cleanup",
+          "description": "Clearing of Guinea grass, invasive vines, blackberry, lantana, young guava, and dense brush on Kauai residential and agricultural properties.",
+          "provider": { "@type": "LocalBusiness", "name": "Kauai Goatscaping", "telephone": "+18083469737" },
+          "areaServed": "Kauai, Hawaii"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 3,
+        "item": {
+          "@type": "Service",
+          "name": "Maintenance Grazing",
+          "description": "Scheduled weekly or monthly goat grazing to keep Kauai land clear year-round and prevent invasive plant regrowth.",
+          "provider": { "@type": "LocalBusiness", "name": "Kauai Goatscaping", "telephone": "+18083469737" },
+          "areaServed": "Kauai, Hawaii"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 4,
+        "item": {
+          "@type": "Service",
+          "name": "Fence Line Clearing",
+          "description": "Natural goat-powered clearing of overgrown fence lines for Kauai farms, ranches, and rural properties.",
+          "provider": { "@type": "LocalBusiness", "name": "Kauai Goatscaping", "telephone": "+18083469737" },
+          "areaServed": "Kauai, Hawaii"
+        }
+      }
+    ]
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -32,6 +90,7 @@
     .sticky-cta{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:999;animation:floaty 3s ease-in-out infinite}
     ::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:#F5EFE6}::-webkit-scrollbar-thumb{background:#2D6A4F;border-radius:4px}
   </style>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body style="font-family:'Inter',sans-serif;" class="bg-goat-beige text-gray-800">
 
@@ -52,7 +111,7 @@
       <a href="estimator.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Estimator</a>
       <a href="gallery.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">Gallery</a>
       <a href="faq.html" class="nav-link text-gray-700 hover:text-goat-green transition-colors">FAQ</a>
-      <button id="pidgin-toggle" title="What, you no unda stand those words? How dis!" class="text-xs font-semibold border-2 border-goat-brown/40 text-goat-brown hover:border-goat-orange hover:text-goat-orange px-3 py-1.5 rounded-full transition-all whitespace-nowrap">🤙 Speak Pidgin</button>
+      <button id="pidgin-toggle" title="What, you no unda stand those words? How dis!" class="text-xs font-semibold border-2 border-goat-brown/40 text-goat-brown hover:border-goat-orange hover:text-goat-orange px-3 py-1.5 rounded-full transition-all whitespace-nowrap"><i data-lucide="globe" class="w-4 h-4 inline-block"></i> Speak Pidgin</button>
       <a href="contact.html" data-pidgin="Eh, Free Quote!" class="bg-goat-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105">Free Quote</a>
     </div>
     <button id="nav-toggle" class="md:hidden p-2 text-goat-green rounded-lg" aria-label="Open menu">
@@ -69,8 +128,8 @@
       <a href="gallery.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Gallery</a>
       <a href="faq.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">FAQ</a>
       <a href="contact.html" class="py-2 px-3 rounded-lg text-gray-700 hover:bg-goat-green-pale font-medium">Contact</a>
-      <button id="pidgin-toggle-mob" title="What, you no unda stand those words? How dis!" class="py-2 px-3 rounded-lg text-goat-brown hover:bg-goat-green-pale font-medium text-left w-full">🤙 Speak Pidgin</button>
-      <a href="tel:+18083469737" class="mt-2 bg-goat-green text-white py-3 rounded-full text-center font-bold">📞 Call Now</a>
+      <button id="pidgin-toggle-mob" title="What, you no unda stand those words? How dis!" class="py-2 px-3 rounded-lg text-goat-brown hover:bg-goat-green-pale font-medium text-left w-full"><i data-lucide="globe" class="w-4 h-4 inline-block"></i> Speak Pidgin</button>
+      <a href="tel:+18083469737" class="mt-2 bg-goat-green text-white py-3 rounded-full text-center font-bold"><i data-lucide="phone" class="w-4 h-4 inline-block"></i> Call Now</a>
     </div>
   </div>
 </nav>
@@ -79,7 +138,7 @@
 <section class="pt-28 pb-16 bg-goat-green text-white text-center relative overflow-hidden">
   <div class="absolute inset-0 opacity-10" style="background-image:url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23fff\' fill-opacity=\'1\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/svg%3E');"></div>
   <div class="relative z-10 max-w-3xl mx-auto px-6">
-    <div class="text-5xl mb-4">🌿</div>
+    <div class="mb-4"><i data-lucide="leaf" class="w-16 h-16 text-white/80"></i></div>
     <h1 class="font-display text-4xl md:text-6xl font-bold mb-4 tracking-tight">Our Services</h1>
     <p class="text-green-200 text-xl max-w-xl mx-auto">Tailored goatscaping solutions for every kind of Kauai terrain</p>
   </div>
@@ -98,7 +157,7 @@
     <div class="grid md:grid-cols-2 gap-10 items-center reveal">
       <div class="bg-goat-green rounded-3xl flex items-center justify-center" style="min-height:280px;">
         <div class="text-center text-white/60 p-8">
-          <div class="text-8xl mb-4">⛰️</div>
+          <div class="mb-4"><i data-lucide="mountain" class="w-24 h-24 text-white/60"></i></div>
           <p class="text-sm">Add a hillside photo here</p>
         </div>
       </div>
@@ -109,10 +168,10 @@
           Goats were made for hills. Where machines can't go and workers won't, our herd thrives. We handle the steepest, rockiest, most overgrown slopes on Kauai — safely and efficiently.
         </p>
         <ul class="space-y-2 mb-8">
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> No erosion from heavy equipment</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Works on 45°+ slopes</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Safe, fenced operation</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Natural soil conditioning</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> No erosion from heavy equipment</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Works on 45°+ slopes</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Safe, fenced operation</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Natural soil conditioning</li>
         </ul>
         <a href="contact.html" class="inline-flex items-center gap-2 bg-goat-green text-white font-bold px-7 py-3 rounded-full hover:bg-green-800 transition-all hover:scale-105">
           Get a Quote →
@@ -126,7 +185,7 @@
     <div class="grid md:grid-cols-2 gap-10 items-center reveal">
       <div class="md:order-2 bg-amber-800 rounded-3xl flex items-center justify-center" style="min-height:280px;">
         <div class="text-center text-white/60 p-8">
-          <div class="text-8xl mb-4">🌱</div>
+          <div class="mb-4"><i data-lucide="sprout" class="w-24 h-24 text-white/60"></i></div>
           <p class="text-sm">Add an overgrown property photo here</p>
         </div>
       </div>
@@ -137,10 +196,10 @@
           Has your property been taken over by vines, Guinea grass, or invasive plants? Our goats are expert weed eaters — give them a few days and your land looks completely different.
         </p>
         <ul class="space-y-2 mb-8">
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Invasive species removal</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Vines & dense brush</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Guinea grass & weeds</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Before-and-after photos</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Invasive species removal</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Vines & dense brush</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Guinea grass & weeds</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Before-and-after photos</li>
         </ul>
         <a href="contact.html" class="inline-flex items-center gap-2 bg-goat-orange text-white font-bold px-7 py-3 rounded-full hover:bg-orange-600 transition-all hover:scale-105">
           Get a Quote →
@@ -154,7 +213,7 @@
     <div class="grid md:grid-cols-2 gap-10 items-center reveal">
       <div class="bg-emerald-800 rounded-3xl flex items-center justify-center" style="min-height:280px;">
         <div class="text-center text-white/60 p-8">
-          <div class="text-8xl mb-4">📅</div>
+          <div class="mb-4"><i data-lucide="calendar" class="w-24 h-24 text-white/60"></i></div>
           <p class="text-sm">Add a maintenance grazing photo here</p>
         </div>
       </div>
@@ -165,10 +224,10 @@
           Keep your land clear all year with scheduled grazing visits. Weekly or monthly plans keep invasive plants from returning so you never have to deal with a full overgrowth situation again.
         </p>
         <ul class="space-y-2 mb-8">
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Weekly or monthly visits</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Prevent regrowth before it starts</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Flexible scheduling</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Long-term cost savings</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Weekly or monthly visits</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Prevent regrowth before it starts</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Flexible scheduling</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Long-term cost savings</li>
         </ul>
         <a href="contact.html" class="inline-flex items-center gap-2 bg-goat-green text-white font-bold px-7 py-3 rounded-full hover:bg-green-800 transition-all hover:scale-105">
           Get a Quote →
@@ -182,7 +241,7 @@
     <div class="grid md:grid-cols-2 gap-10 items-center reveal">
       <div class="md:order-2 bg-stone-700 rounded-3xl flex items-center justify-center" style="min-height:280px;">
         <div class="text-center text-white/60 p-8">
-          <div class="text-8xl mb-4">🌾</div>
+          <div class="mb-4"><i data-lucide="wheat" class="w-24 h-24 text-white/60"></i></div>
           <p class="text-sm">Add a fence line photo here</p>
         </div>
       </div>
@@ -193,10 +252,10 @@
           Fence lines are notorious for collecting overgrowth. Goats follow fence lines naturally and clear them thoroughly — ideal for farms and rural properties.
         </p>
         <ul class="space-y-2 mb-8">
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Farms and ranches</li>
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Rural residential parcels</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Farms and ranches</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Rural residential parcels</li>
 
-          <li class="flex items-center gap-3 text-gray-700"><span class="text-goat-green font-bold">✓</span> Works any time of year</li>
+          <li class="flex items-center gap-3 text-gray-700"><i data-lucide="check" class="w-4 h-4 text-goat-green flex-shrink-0"></i> Works any time of year</li>
         </ul>
         <a href="contact.html" class="inline-flex items-center gap-2 bg-goat-brown text-white font-bold px-7 py-3 rounded-full hover:bg-amber-900 transition-all hover:scale-105">
           Get a Quote →
@@ -210,12 +269,12 @@
 <!-- CTA BANNER -->
 <section class="py-20 bg-goat-green text-white text-center">
   <div class="max-w-3xl mx-auto px-6 reveal">
-    <div class="text-5xl mb-5">🐐</div>
+    <div class="mb-5"><i data-lucide="leaf" class="w-16 h-16 text-white/80"></i></div>
     <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Not Sure Which Service You Need?</h2>
     <p class="text-green-200 text-xl mb-8">Send us a photo and we'll recommend the right approach for your land — totally free, no pressure.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="contact.html" class="pulse bg-goat-orange hover:bg-orange-600 text-white font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105">Get Free Estimate</a>
-      <a href="tel:+18083469737" class="border-2 border-white text-white hover:bg-white hover:text-goat-green font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105">📞 Call Us</a>
+      <a href="tel:+18083469737" class="border-2 border-white text-white hover:bg-white hover:text-goat-green font-bold px-9 py-4 rounded-full text-lg transition-all hover:scale-105"><i data-lucide="phone" class="w-4 h-4 inline-block mr-1"></i> Call Us</a>
     </div>
   </div>
 </section>
@@ -243,9 +302,9 @@
       <div>
         <h4 class="font-semibold mb-4 text-goat-orange">Contact</h4>
         <div class="flex flex-col gap-3 text-sm text-gray-400">
-          <a href="tel:+18083469737" class="hover:text-white transition-colors">📞 (808) 346-9737</a>
-          <a href="sms:+18083469737" class="hover:text-white transition-colors">💬 Text for a fast reply</a>
-          <span>🌺 Based in Kalaheo · Serving island-wide</span>
+          <a href="tel:+18083469737" class="hover:text-white transition-colors"><i data-lucide="phone" class="w-4 h-4 inline-block mr-1"></i> (808) 346-9737</a>
+          <a href="sms:+18083469737" class="hover:text-white transition-colors"><i data-lucide="message-circle" class="w-4 h-4 inline-block mr-1"></i> Text for a fast reply</a>
+          <span><i data-lucide="map-pin" class="w-4 h-4 inline-block mr-1"></i> Based in Kalaheo · Serving island-wide</span>
         </div>
       </div>
     </div>
@@ -257,7 +316,7 @@
 </footer>
 
 <div class="md:hidden sticky-cta">
-  <a href="tel:+18083469737" class="bg-goat-orange text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-sm whitespace-nowrap">📞 Call Now — Free Quote</a>
+  <a href="tel:+18083469737" class="bg-goat-orange text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-sm whitespace-nowrap gap-2"><i data-lucide="phone" class="w-4 h-4 inline-block mr-1"></i> Call Now — Free Quote</a>
 </div>
 
 <script>
@@ -276,5 +335,6 @@
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 </script>
 <script src="pidgin.js"></script>
+<script>document.addEventListener("DOMContentLoaded",()=>lucide.createIcons());</script>
 </body>
 </html>

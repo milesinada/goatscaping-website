@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /submitted.html
+
+Sitemap: https://kauaigoats.com/sitemap.xml
