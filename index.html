@@ -159,6 +159,7 @@
   </script>
   <style>
     .font-display { font-family: 'Playfair Display', Georgia, serif; }
+    html, body { overflow-x: hidden; }
     html { scroll-behavior: smooth; }
 
     /* Scroll reveal */
@@ -200,7 +201,7 @@
     .nav-link:hover::after { width: 100%; }
 
     /* Before/after slider */
-    .ba-wrap { position: relative; overflow: hidden; cursor: col-resize; user-select: none; }
+    .ba-wrap { position: relative; overflow: hidden; cursor: col-resize; user-select: none; touch-action: none; }
     .ba-after { position: absolute; inset: 0; width: 100%; height: 100%; }
     .ba-before {
       position: absolute; top: 0; left: 0;
@@ -704,8 +705,8 @@
   baCont.addEventListener('mousedown', e => { baDrag = true; setBA(e.clientX); });
   document.addEventListener('mousemove', e => { if (baDrag) setBA(e.clientX); });
   document.addEventListener('mouseup', () => baDrag = false);
-  baCont.addEventListener('touchstart', e => { baDrag = true; setBA(e.touches[0].clientX); }, { passive: true });
-  document.addEventListener('touchmove', e => { if (baDrag) setBA(e.touches[0].clientX); }, { passive: true });
+  baCont.addEventListener('touchstart', e => { baDrag = true; setBA(e.touches[0].clientX); }, { passive: false });
+  baCont.addEventListener('touchmove', e => { e.preventDefault(); setBA(e.touches[0].clientX); }, { passive: false });
   document.addEventListener('touchend', () => baDrag = false);
 </script>
 <script src="pidgin.js"></script>
