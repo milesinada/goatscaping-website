@@ -1,3 +1,9 @@
+User-agent: facebookexternalhit
+Allow: /
+User-agent: *
+Allow: /
+Disallow: /submitted.html
+Sitemap: https://kauaigoats.com/sitemap.xml
 User-agent: *
 Allow: /
 Disallow: /submitted.html
