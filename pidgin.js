@@ -1,4 +1,4 @@
-// Kauai Goatscaping — Pidgin Mode Toggle
+// Kauai Goatscaping: Pidgin mode toggle
 (function () {
   'use strict';
   var KEY = 'pidgin-mode';
