@@ -534,9 +534,12 @@
     const b = rect.getBounds(), ne = b.getNorthEast(), sw = b.getSouthWest();
     const nw = new google.maps.LatLng(ne.lat(), sw.lng());
     const se = new google.maps.LatLng(sw.lat(), ne.lng());
-    const sqFt = Math.round(google.maps.geometry.spherical.computeArea([ne, nw, sw, se]) * 10.7639);
+
+    const widthFt  = Math.round(google.maps.geometry.spherical.computeDistanceBetween(sw, se) * 3.28084);
+    const lengthFt = Math.round(google.maps.geometry.spherical.computeDistanceBetween(sw, nw) * 3.28084);
+    const sqFt  = Math.round(google.maps.geometry.spherical.computeArea([ne, nw, sw, se]) * 10.7639);
     const plots = Math.max(1, Math.ceil(sqFt / 2500));
-    const est = Math.max(250, plots * 100);
+    const est   = Math.max(250, plots * 100);
 
     document.getElementById('est-sqft').textContent = sqFt.toLocaleString();
     document.getElementById('est-plots').textContent = plots;
@@ -545,8 +548,10 @@
       ? 'Small job minimum, includes 2 days with a small herd. Final price confirmed after free site visit.'
       : 'Based on $100 per 50x50 ft plot. Final price confirmed after free site visit.';
 
-    // Pre-fill size field in the form below
-    document.getElementById('size').value = sqFt.toLocaleString() + ' sq ft (estimated ~$' + est.toLocaleString() + ')';
+    // Pre-fill size field with full dimensions
+    document.getElementById('size').value =
+      widthFt.toLocaleString() + ' ft wide x ' + lengthFt.toLocaleString() + ' ft long' +
+      ' (' + sqFt.toLocaleString() + ' sq ft, ~$' + est.toLocaleString() + ')';
 
     document.getElementById('est-results').classList.remove('hidden');
     document.getElementById('est-waiting').classList.add('hidden');
