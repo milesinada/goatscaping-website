@@ -302,16 +302,37 @@
           <input type="hidden" name="subject" value="New Quote Request, Kauai Goatscaping">
           <input type="checkbox" name="botcheck" class="hidden" style="display:none;" aria-hidden="true">
 
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2" for="name">Your Name *</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+
+          <p class="text-xs text-gray-500 -mb-2">Provide at least one way to reach you — phone or email (or both).</p>
+
           <div class="grid sm:grid-cols-2 gap-5">
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2" for="name">Your Name *</label>
-              <input class="form-input" type="text" id="name" name="name" placeholder="John Smith" required>
+              <label class="block text-sm font-semibold text-gray-700 mb-2" for="phone">Phone Number</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(808) 555-0000">
+              <div id="phone-err" class="hidden text-xs text-red-500 mt-1">Phone numbers don't match.</div>
             </div>
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-2" for="phone">Phone Number *</label>
-              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(808) 555-0000" required>
+              <label class="block text-sm font-semibold text-gray-700 mb-2" for="phone-confirm">Confirm Phone</label>
+              <input class="form-input" type="tel" id="phone-confirm" placeholder="(808) 555-0000">
             </div>
           </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com">
+              <div id="email-err" class="hidden text-xs text-red-500 mt-1">Email addresses don't match.</div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2" for="email-confirm">Confirm Email</label>
+              <input class="form-input" type="email" id="email-confirm" placeholder="you@example.com">
+            </div>
+          </div>
+          <div id="contact-err" class="hidden text-sm text-red-500 font-medium">Please enter at least a phone number or email address.</div>
 
           <div>
             <label class="block text-sm font-semibold text-gray-700 mb-2" for="location">Property Location *</label>
@@ -470,6 +491,45 @@
       document.getElementById('photo').files = dt.files;
       document.getElementById('photo').dispatchEvent(new Event('change'));
     }
+  });
+
+  // Contact validation: at least one of phone/email, both must match their confirm field
+  document.getElementById('quote-form').addEventListener('submit', function(e) {
+    const phone        = document.getElementById('phone').value.trim();
+    const phoneConfirm = document.getElementById('phone-confirm').value.trim();
+    const email        = document.getElementById('email').value.trim();
+    const emailConfirm = document.getElementById('email-confirm').value.trim();
+    let valid = true;
+
+    // At least one contact method
+    if (!phone && !email) {
+      document.getElementById('contact-err').classList.remove('hidden');
+      valid = false;
+    } else {
+      document.getElementById('contact-err').classList.add('hidden');
+    }
+
+    // Phone must match if entered
+    if (phone && phone !== phoneConfirm) {
+      document.getElementById('phone-err').classList.remove('hidden');
+      document.getElementById('phone-confirm').classList.add('border-red-400');
+      valid = false;
+    } else {
+      document.getElementById('phone-err').classList.add('hidden');
+      document.getElementById('phone-confirm').classList.remove('border-red-400');
+    }
+
+    // Email must match if entered
+    if (email && email !== emailConfirm) {
+      document.getElementById('email-err').classList.remove('hidden');
+      document.getElementById('email-confirm').classList.add('border-red-400');
+      valid = false;
+    } else {
+      document.getElementById('email-err').classList.add('hidden');
+      document.getElementById('email-confirm').classList.remove('border-red-400');
+    }
+
+    if (!valid) e.preventDefault();
   });
 
 </script>
